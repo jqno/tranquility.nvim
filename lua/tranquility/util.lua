@@ -14,7 +14,7 @@ local function hi(group, fg, bg, gui)
 end
 
 local function hilink(group, link)
-    local cmd = string.format('highlight link %s %s', group, link)
+    local cmd = string.format('highlight! link %s %s', group, link)
     vim.cmd(cmd)
 end
 
