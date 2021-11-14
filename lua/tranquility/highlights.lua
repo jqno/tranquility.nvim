@@ -3,11 +3,7 @@ local mod = util.mod
 local hi = util.hi
 local hilink = util.hilink
 
-local function set_highlights(colors)
-    local bg = colors.bg
-
-    hi('Normal', colors.white.light, bg)
-
+local function set_treesitter(colors, bg)
     hi('TSComment', colors.comment.light, bg)
     hi('TSKeyword', colors.white.dark, bg, mod.bold)
     hi('TSLiteral', colors.literal.light, bg, mod.bold)
@@ -72,9 +68,17 @@ local function set_highlights(colors)
     hilink('TSTextReference', 'TSComment')
     hilink('TSEnvironment', 'TSKeyword')
     hilink('TSEnvironmentName', 'TSLiteral')
+end
 
+local function set_filetype_html()
     hilink('htmlTSNone', 'TSVariable')
 end
 
+local function set_highlights(colors)
+    hi('Normal', colors.white.light, colors.bg)
+
+    set_treesitter(colors, colors.bg)
+    set_filetype_html()
+end
 
 return {set_highlights = set_highlights}
