@@ -31,7 +31,7 @@ local function define_colors(config)
   return colors
 end
 
-local function highlight(group, fg, bg, gui)
+local function hi(group, fg, bg, gui)
     local cmd = 'highlight ' .. group
     if fg ~= nil then cmd = cmd .. ' guifg=' .. fg end
     if bg ~= nil then cmd = cmd .. ' guibg=' .. bg end
@@ -39,7 +39,7 @@ local function highlight(group, fg, bg, gui)
     vim.cmd(cmd)
 end
 
-local function highlight_link(group, link)
+local function hilink(group, link)
     local cmd = string.format('highlight link %s %s', group, link)
     vim.cmd(cmd)
 end
