@@ -119,6 +119,15 @@ local function set_filetype_html()
     hilink('htmlTSNone', 'TSVariable')
 end
 
+local function set_filetype_xml()
+    hilink('xmlAttrib', 'TSTagAttribute')
+    hilink('xmlAttribPunct', 'TSTagDelimiter')
+    hilink('xmlEqual', 'TSTagDelimiter')
+    hilink('xmlString', 'TSLiteral')
+    hilink('xmlTagName', 'TSKeyword')
+    hilink('xmlTag', 'TSTagDelimiter')
+end
+
 local function set_highlights(colors)
     hi('Normal', colors.white.light, colors.bg)
 
@@ -126,6 +135,7 @@ local function set_highlights(colors)
     set_visual_elements()
     set_treesitter(colors, colors.bg)
     set_filetype_html()
+    set_filetype_xml()
 end
 
 return {set_highlights = set_highlights}
