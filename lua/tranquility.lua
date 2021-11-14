@@ -1,4 +1,9 @@
-local none = 'NONE'
+local mod = {
+  none = 'NONE',
+  bold = 'bold',
+  italic = 'italic',
+  underline = 'underline'
+}
 
 local defaults = {
     palettes = {
@@ -23,7 +28,7 @@ local function define_colors(config)
   colors.ui = vim.deepcopy(colors[config.mappings.ui])
 
   if config.transparent_background then
-    colors.bg = none
+    colors.bg = mod.none
   else
     colors.bg = colors.black.dark
   end
