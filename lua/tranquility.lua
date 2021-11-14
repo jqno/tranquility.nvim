@@ -52,6 +52,9 @@ local function hilink(group, link)
 end
 
 local function set_highlights(colors)
+  vim.cmd([[hi clear]])
+  vim.cmd([[if exists("g:syntax_on") | syntax reset | endif]])
+
   local bg = colors.bg
 
   hi('Normal', colors.white.light, bg)
