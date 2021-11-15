@@ -7,9 +7,15 @@ local mod = {
 
 local function hi(group, fg, bg, gui)
     local cmd = 'highlight ' .. group
-    if fg ~= nil then cmd = cmd .. ' guifg=' .. fg end
-    if bg ~= nil then cmd = cmd .. ' guibg=' .. bg end
-    if gui ~= nil then cmd = cmd .. ' gui=' .. gui end
+    if fg ~= nil then
+        cmd = cmd .. ' guifg=' .. fg
+    end
+    if bg ~= nil then
+        cmd = cmd .. ' guibg=' .. bg
+    end
+    if gui ~= nil then
+        cmd = cmd .. ' gui=' .. gui
+    end
     vim.cmd(cmd)
 end
 
