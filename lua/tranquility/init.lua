@@ -12,6 +12,7 @@ local function define_colors(config)
 
     colors.comment = vim.deepcopy(colors[config.mappings.comment])
     colors.literal = vim.deepcopy(colors[config.mappings.literal])
+    colors.operator = vim.deepcopy(colors[config.mappings.operator])
     colors.ui = vim.deepcopy(colors[config.mappings.ui])
     colors.error = vim.deepcopy(colors.red)
     colors.warning = vim.deepcopy(colors.yellow)
