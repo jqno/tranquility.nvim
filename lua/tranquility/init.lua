@@ -14,8 +14,9 @@ local function define_colors(config)
     colors.literal = vim.deepcopy(colors[config.mappings.literal])
     colors.operator = vim.deepcopy(colors[config.mappings.operator])
     colors.ui = vim.deepcopy(colors[config.mappings.ui])
-    colors.error = vim.deepcopy(colors.red)
-    colors.warning = vim.deepcopy(colors.yellow)
+    colors.error = vim.deepcopy(colors[config.mappings.error])
+    colors.warning = vim.deepcopy(colors[config.mappings.warning])
+    colors.hint = vim.deepcopy(colors[config.mappings.hint])
 
     if config.transparent_background then
         colors.bg = util.mod.none

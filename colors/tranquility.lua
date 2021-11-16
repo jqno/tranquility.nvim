@@ -5,6 +5,9 @@ require('tranquility').setup {
         comment = 'green',
         literal = 'yellow',
         operator = 'green',
-        ui = 'blue'
+        ui = 'blue',
+        error = 'red',
+        warning = 'magenta',
+        hint = 'cyan'
     }
 }
