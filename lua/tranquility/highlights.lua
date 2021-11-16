@@ -125,6 +125,11 @@ local function set_filetype_html()
     hilink('htmlTSStrong', 'TSStrong')
 end
 
+local function set_filetype_lua()
+    hilink('luaFunction', 'TSKeyword')
+    hilink('luaFunctionBlock', 'TSFunction')
+end
+
 local function set_filetype_markdown()
     hilink('markdownBoldDelimiter', 'Delimiter')
     hilink('markdownCodeDelimiter', 'Delimiter')
@@ -219,6 +224,7 @@ local function set_highlights(colors)
     set_visual_elements(colors, colors.bg)
     set_treesitter(colors, colors.bg)
     set_filetype_html()
+    set_filetype_lua()
     set_filetype_markdown()
     set_filetype_xml()
 
