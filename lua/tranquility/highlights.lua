@@ -13,6 +13,7 @@ local function set_native_syntax(colors, bg)
     hi('Ignore', colors.white.dark, bg)
     hi('Operator', colors.operator.dark, bg)
     hi('Statement', colors.white.dark, bg, mod.bold)
+    hi('Title', colors.literal.light, bg)
     hi('Todo', colors.comment.light, bg, mod.bold)
     hi('Type', colors.white.light, bg)
     hi('Underlined', colors.white.light, bg, mod.underline)
@@ -117,7 +118,18 @@ local function set_treesitter(colors, bg)
 end
 
 local function set_filetype_html()
+    hilink('htmlBold', 'TSStrong')
+    hilink('htmlItalic', 'TSEmphasis')
+    hilink('htmlTSEmphasis', 'TSEmphasis')
     hilink('htmlTSNone', 'TSVariable')
+    hilink('htmlTSStrong', 'TSStrong')
+end
+
+local function set_filetype_markdown()
+    hilink('markdownBoldDelimiter', 'Delimiter')
+    hilink('markdownCodeDelimiter', 'Delimiter')
+    hilink('markdownItalicDelimiter', 'Delimiter')
+    hilink('markdownCode', 'Keyword')
 end
 
 local function set_filetype_xml()
@@ -207,6 +219,7 @@ local function set_highlights(colors)
     set_visual_elements(colors, colors.bg)
     set_treesitter(colors, colors.bg)
     set_filetype_html()
+    set_filetype_markdown()
     set_filetype_xml()
 
     set_gui(colors, colors.bg)
