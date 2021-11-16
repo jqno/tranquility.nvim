@@ -13,9 +13,10 @@ local function hi(group, fg, bg, gui)
     if bg ~= nil then
         cmd = cmd .. ' guibg=' .. bg
     end
-    if gui ~= nil then
-        cmd = cmd .. ' gui=' .. gui
+    if gui == nil then
+        gui = mod.none
     end
+    cmd = cmd .. ' gui=' .. gui
     vim.cmd(cmd)
 end
 
