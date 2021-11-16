@@ -50,6 +50,12 @@ local function set_visual_elements(colors, bg)
     hi('Conceal', colors.black.light, bg)
 end
 
+local function set_gitsigns(colors, bg)
+    hi('GitSignsAdd', colors.green.light, bg)
+    hi('GitSignsChange', colors.yellow.light, bg)
+    hi('GitSignsDelete', colors.red.light, bg)
+end
+
 local function set_treesitter(colors, bg)
     hi('TSComment', colors.comment.light, bg)
     hi('TSKeyword', colors.white.dark, bg, mod.bold)
@@ -222,7 +228,10 @@ local function set_highlights(colors)
 
     set_native_syntax(colors, colors.bg)
     set_visual_elements(colors, colors.bg)
+
+    set_gitsigns(colors, colors.bg)
     set_treesitter(colors, colors.bg)
+
     set_filetype_html()
     set_filetype_lua()
     set_filetype_markdown()
