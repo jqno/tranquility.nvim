@@ -2,14 +2,14 @@ local util = require('tranquility.util')
 
 local palettes = {
     selenized = {
-        black = {dark = '#252525', light = '#3b3b3b'},
-        red = {dark = '#ed4a46', light = '#ff5e56'},
-        green = {dark = '#70b433', light = '#83c746'},
-        yellow = {dark = '#dbb32d', light = '#efc541'},
-        blue = {dark = '#368aeb', light = '#4f9cfe'},
-        magenta = {dark = '#eb6eb7', light = '#ff81ca'},
-        cyan = {dark = '#3fc5b7', light = '#56d8c9'},
-        white = {dark = '#777777', light = '#dedede'}
+        black = {dark = {'#252525', '235'}, light = {'#3b3b3b', '237'}},
+        red = {dark = {'#ed4a46', '204'}, light = {'#ff5e56', '203'}},
+        green = {dark = {'#70b433', '107'}, light = {'#83c746', '113'}},
+        yellow = {dark = {'#dbb32d', '179'}, light = {'#efc541', '221'}},
+        blue = {dark = {'#368aeb', '69'}, light = {'#4f9cfe', '75'}},
+        magenta = {dark = {'#eb6eb7', '205'}, light = {'#ff81ca', '212'}},
+        cyan = {dark = {'#3fc5b7', '79'}, light = {'#56d8c9', '80'}},
+        white = {dark = {'#777777', '243'}, light = {'#dedede', '253'}}
     }
 }
 
