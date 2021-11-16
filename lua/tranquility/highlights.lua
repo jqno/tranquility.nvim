@@ -83,6 +83,15 @@ local function set_neovim(colors)
     hi('healthWarning', colors.black.light, colors.warning.light, mod.bold)
 end
 
+local function set_nvimtree()
+    hilink('NvimTreeRootFolder', 'Comment')
+end
+
+local function set_telescope(colors, bg)
+    hi('TelescopeBorder', colors.ui.light, bg)
+    hi('TelescopeMatching', colors.ui.red, bg)
+end
+
 local function set_treesitter(colors, bg)
     hilink('TSComment', 'Comment')
     hilink('TSKeyword', 'Statement')
@@ -259,6 +268,8 @@ local function set_highlights(colors)
     set_gitsigns(colors, colors.bg)
     set_lsp(colors, colors.bg)
     set_neovim(colors)
+    set_nvimtree()
+    set_telescope(colors, colors.bg)
     set_treesitter(colors, colors.bg)
 
     set_filetype_html()
