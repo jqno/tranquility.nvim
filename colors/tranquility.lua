@@ -4,7 +4,7 @@ require('tranquility').setup {
     mappings = {
         comment = 'green',
         literal = 'yellow',
-        operator = 'green',
+        operator = 'yellow',
         ui = 'blue',
         error = 'red',
         warning = 'magenta',

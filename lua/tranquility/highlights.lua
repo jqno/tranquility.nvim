@@ -9,13 +9,13 @@ local function set_native_syntax(colors, bg)
     hi('Debug', colors.warning.ligh, bg)
     hi('Delimiter', colors.white.dark, bg)
     hi('Error', colors.error.light, bg)
-    hi('Identifier', colors.white.light, bg, mod.bold)
+    hi('Identifier', colors.white.light, bg)
     hi('Ignore', colors.white.dark, bg)
     hi('Operator', colors.operator.dark, bg)
     hi('Statement', colors.white.dark, bg, mod.bold)
     hi('Title', colors.literal.light, bg)
     hi('Todo', colors.comment.light, bg, mod.bold)
-    hi('Type', colors.white.light, bg)
+    hi('Type', colors.white.light, bg, mod.bold)
     hi('Underlined', colors.white.light, bg, mod.underline)
 
     hilink('Boolean', 'Constant')
@@ -169,7 +169,7 @@ local function set_filetype_xml()
     hilink('xmlAttribPunct', 'TSTagDelimiter')
     hilink('xmlEqual', 'TSTagDelimiter')
     hilink('xmlString', 'TSLiteral')
-    hilink('xmlTagName', 'TSKeyword')
+    hilink('xmlTagName', 'TSTag')
     hilink('xmlTag', 'TSTagDelimiter')
 end
 
@@ -210,10 +210,10 @@ local function set_gui(colors, bg)
     hi('VisualNOS', mod.none, colors.ui.dark, mod.bold)
 
     -- Pmenu
-    hi('Pmenu', colors.white.dark, colors.black.light)
+    hi('Pmenu', colors.white.light, colors.black.light)
     hi('PmenuSel', colors.white.light, colors.ui.light, mod.bold)
     hi('PmenuSbar', mod.none, colors.white.dark)
-    hi('PmenuThumb', mod.none, colors.ui.dark)
+    hi('PmenuThumb', mod.none, colors.ui.light)
 
     -- folds
     hi('FoldColumn', colors.white.dark, bg)
