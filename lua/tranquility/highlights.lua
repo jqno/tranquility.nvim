@@ -77,6 +77,12 @@ local function set_lsp(colors, bg)
     hilink('LspDiagnosticsVirtualTextHint', 'LspDiagnosticsSignHint')
 end
 
+local function set_neovim(colors)
+    hi('healthError', colors.black.light, colors.error.light, mod.bold)
+    hi('healthSuccess', colors.black.light, colors.green.light, mod.bold)
+    hi('healthWarning', colors.black.light, colors.warning.light, mod.bold)
+end
+
 local function set_treesitter(colors, bg)
     hilink('TSComment', 'Comment')
     hilink('TSKeyword', 'Statement')
@@ -252,6 +258,7 @@ local function set_highlights(colors)
 
     set_gitsigns(colors, colors.bg)
     set_lsp(colors, colors.bg)
+    set_neovim(colors)
     set_treesitter(colors, colors.bg)
 
     set_filetype_html()
