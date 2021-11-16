@@ -63,11 +63,11 @@ local function set_lsp(colors, bg)
 
     hi('LspDiagnosticsSignError', colors.error.light, bg)
     hi('LspDiagnosticsSignWarning', colors.warning.light, bg)
-    hi('LspDiagnosticsSignInformation', colors.hint.light, bg)
+    hi('LspDiagnosticsSignInformation', colors.info.light, bg)
     hi('LspDiagnosticsSignHint', colors.hint.light, bg)
     hi('LspDiagnosticsUnderlineError', colors.error.light, bg, mod.underline)
     hi('LspDiagnosticsUnderlineWarning', colors.warning.light, bg, mod.underline)
-    hi('LspDiagnosticsUnderlineInformation', colors.hint.light, bg,
+    hi('LspDiagnosticsUnderlineInformation', colors.info.light, bg,
        mod.underline)
     hi('LspDiagnosticsUnderlineHint', colors.hint.light, bg, mod.underline)
     hilink('LspDiagnosticsVirtualTextError', 'LspDiagnosticsSignError')

@@ -24,6 +24,7 @@ local themes = {
             ui = 'blue',
             error = 'red',
             warning = 'magenta',
+            info = 'white',
             hint = 'cyan'
         }
     }
@@ -39,6 +40,7 @@ local function define_colors(theme_name)
     colors.ui = vim.deepcopy(colors[theme.mappings.ui])
     colors.error = vim.deepcopy(colors[theme.mappings.error])
     colors.warning = vim.deepcopy(colors[theme.mappings.warning])
+    colors.info = vim.deepcopy(colors[theme.mappings.info])
     colors.hint = vim.deepcopy(colors[theme.mappings.hint])
 
     if theme.transparent_background then
