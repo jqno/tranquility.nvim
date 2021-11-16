@@ -42,10 +42,11 @@ local function set_native_syntax(colors, bg)
     hilink('Typedef', 'Type')
 end
 
-local function set_visual_elements()
+local function set_visual_elements(colors, bg)
     hilink('Terminal', 'Normal')
     hilink('NonText', 'Ignore')
     hilink('EndOfBuffer', 'Ignore')
+    hi('Conceal', colors.black.light, bg)
 end
 
 local function set_treesitter(colors, bg)
@@ -128,14 +129,87 @@ local function set_filetype_xml()
     hilink('xmlTag', 'TSTagDelimiter')
 end
 
+local function set_gui(colors, bg)
+    -- messages
+    hi('ErrorMsg', colors.white.light, colors.error.dark, mod.bold)
+    hi('WarningMsg', colors.black.light, colors.warning.dark, mod.bold)
+    hi('ModeMsg', colors.ui.dark, bg)
+    hilink('MoreMsg', 'ModeMsg')
+    hilink('Question', 'ModeMsg')
+
+    -- statusline and other lines
+    hi('StatusLine', colors.ui.light, colors.white.light)
+    hi('StatusLineNC', colors.black.light, colors.white.light)
+    hilink('StatusLineTerm', 'StatusLine')
+    hilink('StatusLineTermNC', 'StatusLineNC')
+    hilink('TabLine', 'StatusLineNC')
+    hilink('TabLineFill', 'StatusLineNC')
+    hilink('TabLineSel', 'StatusLine')
+    hilink('ToolbarButton', 'StatusLine')
+    hilink('ToolbarLine', 'StatusLineNC')
+    hi('WildMenu', colors.ui.light, colors.white.light)
+    hi('VertSplit', colors.black.light, colors.black.light)
+
+    -- cursor
+    hi('ColorColumn', mod.none, colors.ui.dark)
+    hi('CursorColumn', mod.none, colors.black.light)
+    hilink('CursorLine', 'CursorColumn')
+    hi('Cursor', mod.none, colors.ui.dark)
+    hilink('CursorIM', 'Cursor')
+    hilink('lCursor', 'Cursor')
+    hi('LineNr', colors.white.dark, bg)
+    hi('CursorLineNr', colors.ui.dark, bg)
+    hi('SignColumn', mod.none, bg)
+
+    -- visual
+    hi('Visual', mod.none, colors.ui.dark, mod.bold)
+    hi('VisualNOS', mod.none, colors.ui.dark, mod.bold)
+
+    -- Pmenu
+    hi('Pmenu', colors.white.dark, colors.black.light)
+    hi('PmenuSel', colors.white.light, colors.ui.light, mod.bold)
+    hi('PmenuSbar', mod.none, colors.white.dark)
+    hi('PmenuThumb', mod.none, colors.ui.dark)
+
+    -- folds
+    hi('FoldColumn', colors.white.dark, bg)
+    hi('Folded', colors.white.dark, bg, mod.italic)
+
+    -- search
+    hi('IncSearch', colors.black.light, colors.warning.dark, mod.bold)
+    hi('Search', colors.white.light, colors.ui.dark)
+    hi('MatchParen', mod.none, colors.ui.dark, mod.bold)
+
+    -- diagnostics
+    hi('SpellBad', colors.warning.dark, bg, mod.underline)
+    hilink('SpellCap', 'SpellBad')
+    hilink('SpellLocal', 'SpellBad')
+    hilink('SpellRare', 'SpellBad')
+
+    -- diff
+    hi('DiffAdd', colors.black.light, colors.green.light)
+    hi('DiffChange', colors.black.light, colors.yellow.light)
+    hi('DiffDelete', colors.black.light, colors.red.light)
+    hilink('DiffText', 'Normal')
+    hilink('diffAdded', 'DiffAdd')
+    hilink('diffChanged', 'DiffChange')
+    hilink('diffRemoved', 'DiffDelete')
+    hilink('diffLine', 'DiffText')
+
+    -- other
+    hi('Directory', colors.ui.light, bg)
+end
+
 local function set_highlights(colors)
     hi('Normal', colors.white.light, colors.bg)
 
     set_native_syntax(colors, colors.bg)
-    set_visual_elements()
+    set_visual_elements(colors, colors.bg)
     set_treesitter(colors, colors.bg)
     set_filetype_html()
     set_filetype_xml()
+
+    set_gui(colors, colors.bg)
 end
 
 return {set_highlights = set_highlights}
