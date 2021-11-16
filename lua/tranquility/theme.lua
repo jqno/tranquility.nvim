@@ -10,23 +10,77 @@ local palettes = {
         magenta = {dark = {'#eb6eb7', '205'}, light = {'#ff81ca', '212'}},
         cyan = {dark = {'#3fc5b7', '79'}, light = {'#56d8c9', '80'}},
         white = {dark = {'#777777', '243'}, light = {'#dedede', '253'}}
+    },
+    nord = {
+        black = {dark = {'#2e3440', '23'}, light = {'#4c566a', '59'}},
+        red = {dark = {'#bf616a', '131'}, light = {'#d08770', '173'}},
+        green = {dark = {'#8fbcbb', '109'}, light = {'#a3be8c', '144'}},
+        yellow = {dark = {'#ebcb8b', '222'}, light = {'#ebcb8b', '222'}},
+        blue = {dark = {'#5e81ac', '67'}, light = {'#81a1c1', '109'}},
+        magenta = {dark = {'#b48ead', '139'}, light = {'#b48ead', '139'}},
+        cyan = {dark = {'#88c0d0', '110'}, light = {'#88c0d0', '110'}},
+        white = {dark = {'#d8dee9', '188'}, light = {'#eceff4', '231'}}
+    },
+    dracula = {
+        black = {dark = {'#21222c', '235'}, light = {'#6272a4', '61'}},
+        red = {dark = {'#ff5555', '203'}, light = {'#ff6e6e', '203'}},
+        green = {dark = {'#50fa7b', '84'}, light = {'#69ff94', '84'}},
+        yellow = {dark = {'#f1fa8c', '228'}, light = {'#ffffa5', '229'}},
+        blue = {dark = {'#bd94f9', '141'}, light = {'#d6acff', '183'}},
+        magenta = {dark = {'#ff79c6', '212'}, light = {'#ff92df', '212'}},
+        cyan = {dark = {'#8be9fd', '117'}, light = {'#a4ffff', '159'}},
+        white = {dark = {'#f8f8f2', '253'}, light = {'#ffffff', '231'}}
+    }
+}
+
+local mappings = {
+    selenized = {
+        comment = 'green',
+        literal = 'yellow',
+        operator = 'yellow',
+        ui = 'blue',
+        error = 'red',
+        warning = 'magenta',
+        info = 'white',
+        hint = 'cyan'
+    },
+    nord = {
+        comment = 'blue',
+        literal = 'green',
+        operator = 'green',
+        ui = 'cyan',
+        error = 'red',
+        warning = 'yellow',
+        info = 'white',
+        hint = 'cyan'
+    },
+    dracula = {
+        comment = 'magenta',
+        literal = 'blue',
+        operator = 'blue',
+        ui = 'cyan',
+        error = 'red',
+        warning = 'yellow',
+        info = 'white',
+        hint = 'cyan'
     }
 }
 
 local themes = {
-    default = {
+    selenized = {
         palette = 'selenized',
         transparent_background = true,
-        mappings = {
-            comment = 'green',
-            literal = 'yellow',
-            operator = 'yellow',
-            ui = 'blue',
-            error = 'red',
-            warning = 'magenta',
-            info = 'white',
-            hint = 'cyan'
-        }
+        mappings = mappings.selenized
+    },
+    nord = {
+        palette = 'nord',
+        transparent_background = false,
+        mappings = mappings.nord
+    },
+    dracula = {
+        palette = 'dracula',
+        transparent_background = false,
+        mappings = mappings.dracula
     }
 }
 

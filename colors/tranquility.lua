@@ -1,1 +1,1 @@
-require('tranquility').setup('default')
+require('tranquility').setup('selenized')

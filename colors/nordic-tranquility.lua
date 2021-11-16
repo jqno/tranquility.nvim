@@ -1,0 +1,1 @@
+require('tranquility').setup('nord')
