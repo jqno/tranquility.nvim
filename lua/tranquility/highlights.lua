@@ -56,6 +56,27 @@ local function set_gitsigns(colors, bg)
     hi('GitSignsDelete', colors.red.light, bg)
 end
 
+local function set_lsp(colors, bg)
+    hi('LspReferenceText', mod.none, mod.none, mod.italic)
+    hilink('LspReferenceRead', 'DiffAdd')
+    hilink('LspReferenceWrite', 'DiffDelete')
+
+    hi('LspDiagnosticsSignError', colors.error.light, bg)
+    hi('LspDiagnosticsSignWarning', colors.warning.light, bg)
+    hi('LspDiagnosticsSignInformation', colors.cyan.light, bg)
+    hi('LspDiagnosticsSignHint', colors.cyan.light, bg)
+    hi('LspDiagnosticsUnderlineError', colors.error.light, bg, mod.underline)
+    hi('LspDiagnosticsUnderlineWarning', colors.warning.light, bg, mod.underline)
+    hi('LspDiagnosticsUnderlineInformation', colors.cyan.light, bg,
+       mod.underline)
+    hi('LspDiagnosticsUnderlineHint', colors.cyan.light, bg, mod.underline)
+    hilink('LspDiagnosticsVirtualTextError', 'LspDiagnosticsSignError')
+    hilink('LspDiagnosticsVirtualTextWarning', 'LspDiagnosticsSignWarning')
+    hilink('LspDiagnosticsVirtualTextInformation',
+           'LspDiagnosticsSignInformation')
+    hilink('LspDiagnosticsVirtualTextHint', 'LspDiagnosticsSignHint')
+end
+
 local function set_treesitter(colors, bg)
     hi('TSComment', colors.comment.light, bg)
     hi('TSKeyword', colors.white.dark, bg, mod.bold)
@@ -230,6 +251,7 @@ local function set_highlights(colors)
     set_visual_elements(colors, colors.bg)
 
     set_gitsigns(colors, colors.bg)
+    set_lsp(colors, colors.bg)
     set_treesitter(colors, colors.bg)
 
     set_filetype_html()
