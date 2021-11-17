@@ -159,6 +159,11 @@ local function set_treesitter(colors, bg)
     hilink('TSEnvironmentName', 'TSLiteral')
 end
 
+local function set_filetype_gitcommit()
+    hilink('gitcommitSummary', 'Constant')
+    hilink('gitcommitOverflow', 'Error')
+end
+
 local function set_filetype_html()
     hilink('htmlBold', 'TSStrong')
     hilink('htmlItalic', 'TSEmphasis')
@@ -272,6 +277,7 @@ local function set_highlights(colors)
     set_telescope(colors, colors.bg)
     set_treesitter(colors, colors.bg)
 
+    set_filetype_gitcommit()
     set_filetype_html()
     set_filetype_lua()
     set_filetype_markdown()
