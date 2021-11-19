@@ -21,6 +21,16 @@ local palettes = {
         cyan = {dark = {'#88c0d0', '110'}, light = {'#88c0d0', '110'}},
         white = {dark = {'#d8dee9', '188'}, light = {'#eceff4', '231'}}
     },
+    intellij = {
+        black = {dark = {'#2b2b2b', '16'}, light = {'#52503a', '59'}},
+        red = {dark = {'#bc3f3c', '131'}, light = {'#ff6b68', '203'}},
+        green = {dark = {'#6a8759', '65'}, light = {'#77b767', '107'}},
+        yellow = {dark = {'#bbb529', '142'}, light = {'#ffc66d', '221'}},
+        blue = {dark = {'#287bde', '32'}, light = {'#6897bb', '67'}},
+        magenta = {dark = {'#9876aa', '103'}, light = {'#cc7832', '173'}},
+        cyan = {dark = {'#507874', '66'}, light = {'#80bfff', '111'}},
+        white = {dark = {'#808080', '102'}, light = {'#a9b7c6', '146'}}
+    },
     dracula = {
         black = {dark = {'#21222c', '235'}, light = {'#6272a4', '61'}},
         red = {dark = {'#ff5555', '203'}, light = {'#ff6e6e', '203'}},
@@ -54,6 +64,16 @@ local mappings = {
         info = 'white',
         hint = 'cyan'
     },
+    intellij = {
+        comment = 'green',
+        literal = 'magenta',
+        operator = 'yellow',
+        ui = 'blue',
+        error = 'red',
+        warning = 'yellow',
+        info = 'white',
+        hint = 'cyan'
+    },
     dracula = {
         comment = 'magenta',
         literal = 'blue',
@@ -76,6 +96,11 @@ local themes = {
         palette = 'nord',
         transparent_background = false,
         mappings = mappings.nord
+    },
+    intellij = {
+        palette = 'intellij',
+        transparent_background = false,
+        mappings = mappings.intellij
     },
     dracula = {
         palette = 'dracula',
