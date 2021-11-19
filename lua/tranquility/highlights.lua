@@ -6,7 +6,7 @@ local hilink = util.hilink
 local function set_native_syntax(colors, bg)
     hi('Comment', colors.comment.light, bg)
     hi('Constant', colors.literal.light, bg)
-    hi('Debug', colors.warning.ligh, bg)
+    hi('Debug', colors.warning.light, bg)
     hi('Delimiter', colors.white.dark, bg)
     hi('Error', colors.error.light, bg)
     hi('Identifier', colors.white.light, bg)
