@@ -184,6 +184,10 @@ local function set_filetype_markdown()
     hilink('markdownCode', 'Keyword')
 end
 
+local function set_filetype_vimwiki(colors, bg)
+    hi('VimwikiWeblink1', colors.literal.light, bg, mod.underline)
+end
+
 local function set_filetype_xml()
     hilink('xmlAttrib', 'TSTagAttribute')
     hilink('xmlAttribPunct', 'TSTagDelimiter')
@@ -281,6 +285,7 @@ local function set_highlights(colors)
     set_filetype_html()
     set_filetype_lua()
     set_filetype_markdown()
+    set_filetype_vimwiki(colors, colors.bg)
     set_filetype_xml()
 
     set_gui(colors, colors.bg)
