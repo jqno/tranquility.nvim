@@ -48,6 +48,11 @@ local function set_visual_elements(colors, bg)
     hilink('NonText', 'Ignore')
     hilink('EndOfBuffer', 'Ignore')
     hi('Conceal', colors.black.light, bg)
+    hi('FloatBorder', colors.ui.light, colors.black.light)
+end
+
+local function set_floaterm()
+    hilink('FloatermBorder', 'FloatBorder')
 end
 
 local function set_gitsigns(colors, bg)
@@ -272,6 +277,7 @@ local function set_highlights(colors)
     set_native_syntax(colors, colors.bg)
     set_visual_elements(colors, colors.bg)
 
+    set_floaterm()
     set_gitsigns(colors, colors.bg)
     set_lsp(colors, colors.bg)
     set_neovim(colors)
