@@ -147,7 +147,7 @@ local function set_treesitter(colors, bg)
     hilink('TSTagAttribute', 'TSType')
     hilink('TSTagDelimiter', 'TSPunctDelimiter')
     hilink('TSTypeBuiltin', 'TSType')
-    hilink('TSVariableBuiltin', 'TSVariable')
+    hilink('TSVariableBuiltin', 'TSKeyword')
 
     hi('TSURI', colors.blue.light, bg)
     hi('TSText', colors.white.light, bg)
