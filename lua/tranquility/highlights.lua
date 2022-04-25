@@ -220,6 +220,7 @@ local function set_gui(colors, bg)
     hilink('ToolbarLine', 'StatusLineNC')
     hi('WildMenu', colors.ui.light, colors.white.light)
     hi('VertSplit', colors.black.light, colors.black.light)
+    hi('WinSeparator', colors.ui.light, mod.none)
 
     -- cursor
     hi('ColorColumn', mod.none, colors.ui.dark)
