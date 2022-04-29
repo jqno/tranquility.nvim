@@ -210,7 +210,7 @@ local function set_gui(colors, bg)
 
     -- statusline and other lines
     hi('StatusLine', colors.ui.light, colors.white.light)
-    hi('StatusLineNC', colors.black.light, colors.white.light)
+    hi('StatusLineNC', colors.white.dark, colors.black.light)
     hilink('StatusLineTerm', 'StatusLine')
     hilink('StatusLineTermNC', 'StatusLineNC')
     hilink('TabLine', 'StatusLineNC')
@@ -296,4 +296,4 @@ local function set_highlights(colors)
     set_gui(colors, colors.bg)
 end
 
-return {set_highlights = set_highlights}
+return { set_highlights = set_highlights }
