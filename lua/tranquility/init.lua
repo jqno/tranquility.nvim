@@ -18,4 +18,4 @@ local function theme_colors()
     return colors
 end
 
-return {setup = setup, colors = theme_colors}
+return { setup = setup, colors = theme_colors }

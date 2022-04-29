@@ -1,5 +1,5 @@
 local mod = {
-    none = {'NONE', 'NONE'},
+    none = { 'NONE', 'NONE' },
     bold = 'bold',
     italic = 'italic',
     underline = 'underline'
@@ -25,4 +25,4 @@ local function hilink(group, link)
     vim.cmd(cmd)
 end
 
-return {mod = mod, hi = hi, hilink = hilink}
+return { mod = mod, hi = hi, hilink = hilink }
