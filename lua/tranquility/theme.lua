@@ -142,19 +142,18 @@ local themes = {
 }
 
 local function define_colors(theme_name)
-    local preset = themes[theme_name]
     local overrides = vim.g.tranquility_overrides or {}
-    local theme = vim.deepcopy(preset)
 
-    if overrides.palette ~= nil then
-        theme.palette = overrides.palette
-    end
+    local preset_theme = themes[theme_name]
+    local theme = vim.deepcopy(preset_theme)
+    theme.mappings = vim.tbl_extend('force', preset_theme.mappings, overrides.mappings or {})
     if overrides.transparent_background ~= nil then
         theme.transparent_background = overrides.transparent_background
     end
-    theme.mappings = vim.tbl_extend('force', preset.mappings, overrides.mappings or {})
 
-    local colors = vim.deepcopy(palettes[theme.palette])
+    local preset_colors = vim.deepcopy(palettes[theme.palette])
+    local colors = vim.tbl_extend('force', preset_colors, overrides.palette or {})
+
     colors.comment = vim.deepcopy(colors[theme.mappings.comment])
     colors.literal = vim.deepcopy(colors[theme.mappings.literal])
     colors.operator = vim.deepcopy(colors[theme.mappings.operator])
