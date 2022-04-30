@@ -39,6 +39,47 @@ colorscheme tranquilij-idea
 colorscheme tranquil-dracula
 ```
 
+## Advanced configuration
+
+The colorscheme can further be configured through the `vim.g.tranquility_overrides` variable:
+
+```lua
+-- Each of the keys in this table is optional:
+vim.g.tranquility_overrides = {
+    palette = {
+        -- Each color is a pair of hex value and terminal color code
+        dark_black = { '#252525', '235' },
+        light_black = { '#3b3b3b', '237' },
+        dark_red = { '#ed4a46', '204' },
+        light_red = { '#ff5e56', '203' },
+        dark_green = { '#70b433', '107' },
+        light_green = { '#83c746', '113' },
+        dark_yellow = { '#dbb32d', '179' },
+        light_yellow = { '#efc541', '221' },
+        dark_blue = { '#368aeb', '69' },
+        light_blue = { '#4f9cfe', '75' },
+        dark_magenta = { '#eb6eb7', '205' },
+        light_magenta = { '#ff81ca', '212' },
+        dark_cyan = { '#3fc5b7', '79' },
+        light_cyan = { '#56d8c9', '80' },
+        dark_white = { '#777777', '243' },
+        light_white = { '#dedede', '253' }
+    },
+    mappings = {
+        -- Each mapping refers to one of the colors above
+        comment = 'light_green',
+        literal = 'light_yellow',
+        operator = 'dark_yellow',
+        ui = 'light_blue',
+        error = 'light_red',
+        warning = 'light_magenta',
+        info = 'light_white',
+        hint = 'light_cyan'
+    },
+    transparent_background = true
+}
+```
+
 ## Inspiration
 
 I first got the idea watching a talk by [Venkat Subramaniam](https://twitter.com/venkat_s), who uses a similar colorscheme in his editor.
