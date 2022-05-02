@@ -209,8 +209,13 @@ local function set_gui(colors, bg)
     hilink('Question', 'ModeMsg')
 
     -- statusline and other lines
-    hi('StatusLine', colors.ui, colors.light_white)
-    hi('StatusLineNC', colors.dark_white, colors.light_black)
+    if colors.invert_statusline then
+        hi('StatusLine', colors.dark_white, colors.light_black)
+        hi('StatusLineNC', colors.ui, colors.light_white)
+    else
+        hi('StatusLine', colors.ui, colors.light_white)
+        hi('StatusLineNC', colors.dark_white, colors.light_black)
+    end
     hilink('StatusLineTerm', 'StatusLine')
     hilink('StatusLineTermNC', 'StatusLineNC')
     hilink('TabLine', 'StatusLineNC')

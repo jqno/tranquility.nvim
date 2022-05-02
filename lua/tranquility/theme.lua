@@ -177,11 +177,12 @@ local function define_colors(theme_name)
     colors.warning = vim.deepcopy(colors[theme.mappings.warning])
     colors.info = vim.deepcopy(colors[theme.mappings.info])
     colors.hint = vim.deepcopy(colors[theme.mappings.hint])
+    colors.invert_statusline = overrides.invert_statusline
 
     if theme.transparent_background then
         colors.bg = util.mod.none
     else
-        colors.bg = colors.black.dark
+        colors.bg = colors.dark_black
     end
 
     return colors

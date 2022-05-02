@@ -77,7 +77,10 @@ vim.g.tranquility_overrides = {
         info = 'light_white',
         hint = 'light_cyan'
     },
+    -- Whether or not the background should be transparent
     transparent_background = true
+    -- With certain statusline plugins, sometimes it just looks better with inverted colors
+    invert_statusline = true
 }
 ```
 
