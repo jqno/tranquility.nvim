@@ -72,6 +72,7 @@ vim.g.tranquility_overrides = {
         literal = 'light_yellow',
         operator = 'dark_yellow',
         ui = 'light_blue',
+        ui_highlight = 'dark_cyan',
         error = 'light_red',
         warning = 'light_magenta',
         info = 'light_white',

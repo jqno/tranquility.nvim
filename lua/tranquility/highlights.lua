@@ -92,7 +92,8 @@ end
 
 local function set_telescope(colors, bg)
     hi('TelescopeBorder', colors.ui, bg)
-    hi('TelescopeMatching', colors.ui, bg)
+    hi('TelescopeSelection', mod.none, colors.ui)
+    hi('TelescopeMatching', colors.ui_highlight, bg, mod.bold)
 end
 
 local function set_treesitter(colors, bg)
@@ -204,7 +205,7 @@ local function set_gui(colors, bg)
     -- messages
     hi('ErrorMsg', colors.light_white, colors.error, mod.bold)
     hi('WarningMsg', colors.light_black, colors.warning, mod.bold)
-    hi('ModeMsg', colors.ui, bg)
+    hi('ModeMsg', colors.ui_highlight, bg)
     hilink('MoreMsg', 'ModeMsg')
     hilink('Question', 'ModeMsg')
 
@@ -228,10 +229,10 @@ local function set_gui(colors, bg)
     hi('WinSeparator', colors.ui, mod.none)
 
     -- cursor
-    hi('ColorColumn', mod.none, colors.ui)
+    hi('ColorColumn', mod.none, colors.ui_highlight)
     hi('CursorColumn', mod.none, colors.light_black)
     hilink('CursorLine', 'CursorColumn')
-    hi('Cursor', mod.none, colors.ui)
+    hi('Cursor', mod.none, colors.ui_highlight)
     hilink('CursorIM', 'Cursor')
     hilink('lCursor', 'Cursor')
     hi('LineNr', colors.dark_white, bg)
@@ -239,8 +240,8 @@ local function set_gui(colors, bg)
     hi('SignColumn', mod.none, bg)
 
     -- visual
-    hi('Visual', mod.none, colors.ui, mod.bold)
-    hi('VisualNOS', mod.none, colors.ui, mod.bold)
+    hi('Visual', mod.none, colors.ui_highlight, mod.bold)
+    hi('VisualNOS', mod.none, colors.ui_highlight, mod.bold)
 
     -- Pmenu
     hi('Pmenu', colors.light_white, colors.light_black)
@@ -254,8 +255,8 @@ local function set_gui(colors, bg)
 
     -- search
     hi('IncSearch', colors.light_black, colors.warning, mod.bold)
-    hi('Search', colors.light_white, colors.ui)
-    hi('MatchParen', mod.none, colors.ui, mod.bold)
+    hi('Search', colors.light_white, colors.ui_highlight)
+    hi('MatchParen', mod.none, colors.ui_highlight, mod.bold)
 
     -- diagnostics
     hi('SpellBad', colors.warning, bg, mod.underline)
