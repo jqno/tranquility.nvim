@@ -11,7 +11,7 @@ It provides a collection of colorschemes derived from different well-known palet
 ## Screenshots
 
 ![tranquility](doc/tranquility.png)
-Tranquility: based on [Selenized palette](https://github.com/jan-warchol/selenized)
+Green tranquility: based on [Selenized palette](https://github.com/jan-warchol/selenized)
 
 ![nordic-tranquility](doc/nordic-tranquility.png)
 Nordic Tranquility: based on [Nord palette](https://www.nordtheme.com/)
@@ -34,6 +34,7 @@ Set your colorscheme; pick one:
 
 ```vim
 colorscheme tranquility
+colorscheme green-tranquility
 colorscheme nordic-tranquility
 colorscheme tranquilij-idea
 colorscheme tranquil-dracula

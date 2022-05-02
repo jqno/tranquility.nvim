@@ -86,6 +86,16 @@ local mappings = {
         info = 'light_white',
         hint = 'light_cyan'
     },
+    selenized_green = {
+        comment = 'light_green',
+        literal = 'light_yellow',
+        operator = 'dark_yellow',
+        ui = 'dark_green',
+        error = 'light_red',
+        warning = 'light_magenta',
+        info = 'light_white',
+        hint = 'light_cyan'
+    },
     nord = {
         comment = 'light_blue',
         literal = 'light_green',
@@ -123,6 +133,11 @@ local themes = {
         palette = 'selenized',
         transparent_background = true,
         mappings = mappings.selenized
+    },
+    selenized_green = {
+        palette = 'selenized',
+        transparent_background = true,
+        mappings = mappings.selenized_green
     },
     nord = {
         palette = 'nord',
