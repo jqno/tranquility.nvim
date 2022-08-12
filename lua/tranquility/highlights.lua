@@ -205,6 +205,7 @@ local function set_gui(colors, bg)
     -- messages
     hi('ErrorMsg', colors.light_white, colors.error, mod.bold)
     hi('WarningMsg', colors.light_black, colors.warning, mod.bold)
+    hi('MsgArea', colors.light_white, bg)
     hi('ModeMsg', colors.ui_highlight, bg)
     hilink('MoreMsg', 'ModeMsg')
     hilink('Question', 'ModeMsg')
