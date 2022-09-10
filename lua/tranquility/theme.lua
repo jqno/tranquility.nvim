@@ -84,8 +84,8 @@ local mappings = {
         ui_highlight = 'dark_green',
         error = 'light_red',
         warning = 'light_magenta',
-        info = 'light_white',
-        hint = 'light_cyan'
+        info = 'light_cyan',
+        hint = 'light_white'
     },
     selenized_green = {
         comment = 'light_green',
@@ -95,8 +95,8 @@ local mappings = {
         ui_highlight = 'dark_blue',
         error = 'light_red',
         warning = 'light_magenta',
-        info = 'light_white',
-        hint = 'light_cyan'
+        info = 'light_cyan',
+        hint = 'light_white'
     },
     nord = {
         comment = 'light_blue',
@@ -106,8 +106,8 @@ local mappings = {
         ui_highlight = 'light_blue',
         error = 'light_red',
         warning = 'light_yellow',
-        info = 'light_white',
-        hint = 'light_cyan'
+        info = 'light_cyan',
+        hint = 'light_white'
     },
     intellij = {
         comment = 'light_green',
@@ -117,8 +117,8 @@ local mappings = {
         ui_highlight = 'dark_magenta',
         error = 'light_red',
         warning = 'light_yellow',
-        info = 'light_white',
-        hint = 'light_cyan'
+        info = 'light_cyan',
+        hint = 'light_white'
     },
     dracula = {
         comment = 'light_magenta',
@@ -128,8 +128,8 @@ local mappings = {
         ui_highlight = 'dark_cyan',
         error = 'light_red',
         warning = 'light_yellow',
-        info = 'light_white',
-        hint = 'light_cyan'
+        info = 'light_cyan',
+        hint = 'light_white'
     }
 }
 
