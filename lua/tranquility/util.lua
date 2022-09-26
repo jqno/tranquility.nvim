@@ -2,7 +2,8 @@ local mod = {
     none = { 'NONE', 'NONE' },
     bold = 'bold',
     italic = 'italic',
-    underline = 'underline'
+    underline = 'underline',
+    strikethrough = 'strikethrough'
 }
 
 local function hi(group, fg, bg, gui)
