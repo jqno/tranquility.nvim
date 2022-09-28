@@ -48,7 +48,7 @@ local function set_visual_elements(colors, bg)
     hilink('NonText', 'Ignore')
     hilink('EndOfBuffer', 'Ignore')
     hi('Conceal', colors.light_black, bg)
-    hi('FloatBorder', colors.ui, colors.light_black)
+    hi('FloatBorder', colors.ui, mod.none)
 end
 
 local function set_cmp(colors, bg)
@@ -97,7 +97,7 @@ local function set_nvimtree()
 end
 
 local function set_telescope(colors, bg)
-    hi('TelescopeBorder', colors.ui, bg)
+    hi('TelescopeBorder', colors.ui, mod.none)
     hi('TelescopeSelection', mod.none, colors.ui)
     hi('TelescopeMatching', colors.ui_highlight, bg, mod.bold)
 end
