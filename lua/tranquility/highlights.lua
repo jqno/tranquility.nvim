@@ -68,7 +68,7 @@ local function set_gitsigns(colors, bg)
 end
 
 local function set_lsp(colors, bg)
-    hi('LspReferenceText', mod.none, mod.none, mod.italic)
+    hilink('LspReferenceText', 'DiffChange')
     hilink('LspReferenceRead', 'DiffAdd')
     hilink('LspReferenceWrite', 'DiffDelete')
 
