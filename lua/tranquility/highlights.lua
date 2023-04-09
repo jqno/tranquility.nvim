@@ -84,6 +84,7 @@ local function set_lsp(colors, bg)
     hilink('DiagnosticVirtualTextWarning', 'DiagnosticSignWarning')
     hilink('DiagnosticVirtualTextInformation', 'DiagnosticSignInformation')
     hilink('DiagnosticVirtualTextHint', 'DiagnosticSignHint')
+    hilink('DiagnosticUnnecessary', 'Ignore')
 end
 
 local function set_neovim(colors)
