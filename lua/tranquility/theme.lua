@@ -77,6 +77,7 @@ local palettes = {
 
 local mappings = {
     selenized = {
+        statement = 'dark_white',
         comment = 'dark_blue',
         literal = 'light_yellow',
         operator = 'dark_yellow',
@@ -88,6 +89,7 @@ local mappings = {
         hint = 'light_white'
     },
     selenized_green = {
+        statement = 'dark_white',
         comment = 'light_green',
         literal = 'light_yellow',
         operator = 'dark_yellow',
@@ -99,6 +101,7 @@ local mappings = {
         hint = 'light_white'
     },
     nord = {
+        statement = 'dark_white',
         comment = 'light_blue',
         literal = 'light_green',
         operator = 'dark_green',
@@ -110,6 +113,7 @@ local mappings = {
         hint = 'light_white'
     },
     intellij = {
+        statement = 'dark_white',
         comment = 'light_green',
         literal = 'light_magenta',
         operator = 'dark_yellow',
@@ -121,6 +125,7 @@ local mappings = {
         hint = 'light_white'
     },
     dracula = {
+        statement = 'dark_white',
         comment = 'light_magenta',
         literal = 'light_blue',
         operator = 'dark_blue',
@@ -174,6 +179,7 @@ local function define_colors(theme_name)
     local preset_colors = vim.deepcopy(palettes[theme.palette])
     local colors = vim.tbl_extend('force', preset_colors, overrides.palette or {})
 
+    colors.statement = vim.deepcopy(colors[theme.mappings.statement])
     colors.comment = vim.deepcopy(colors[theme.mappings.comment])
     colors.literal = vim.deepcopy(colors[theme.mappings.literal])
     colors.operator = vim.deepcopy(colors[theme.mappings.operator])
