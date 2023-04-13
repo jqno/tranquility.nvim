@@ -186,6 +186,26 @@ local function set_lsp(colors, bg)
     hilink('DiagnosticUnnecessary', 'Ignore')
 end
 
+local function set_filetype_mutability(colors, bg)
+    hi('@mutable', colors.mutable, bg)
+
+    -- Java
+    hilink('@lsp.type.property.java', '@mutable')
+    hilink('@lsp.typemod.property.readonly.java', '@property')
+
+    -- JavaScript
+    hilink('@lsp.type.variable.javascript', '@mutable')
+    hilink('@lsp.typemod.variable.readonly.javascript', '@variable')
+
+    -- Scala
+    hilink('@lsp.type.parameter.scala', '@mutable')
+    hilink('@lsp.typemod.parameter.readonly.scala', '@parameter')
+    hilink('@lsp.type.property.scala', '@mutable')
+    hilink('@lsp.typemod.property.readonly.scala', '@property')
+    hilink('@lsp.type.variable.scala', '@mutable')
+    hilink('@lsp.typemod.variable.readonly.scala', '@variable')
+end
+
 local function set_filetype_gitcommit()
     hilink('gitcommitSummary', 'Constant')
     hilink('gitcommitOverflow', 'Error')
@@ -316,6 +336,8 @@ local function set_highlights(colors)
     set_telescope(colors, colors.bg)
     set_treesitter(colors, colors.bg)
     set_lsp(colors, colors.bg)
+
+    set_filetype_mutability(colors, colors.bg)
 
     set_filetype_gitcommit()
     set_filetype_html()
