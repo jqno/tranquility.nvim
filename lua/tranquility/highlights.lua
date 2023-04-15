@@ -186,26 +186,6 @@ local function set_lsp(colors, bg)
     hilink('DiagnosticUnnecessary', 'Ignore')
 end
 
-local function set_filetype_mutability(colors, bg)
-    hi('@mutable', colors.mutable, bg)
-
-    -- Java
-    hilink('@lsp.type.property.java', '@mutable')
-    hilink('@lsp.typemod.property.readonly.java', '@property')
-
-    -- JavaScript
-    hilink('@lsp.type.variable.javascript', '@mutable')
-    hilink('@lsp.typemod.variable.readonly.javascript', '@variable')
-
-    -- Scala
-    hilink('@lsp.type.parameter.scala', '@mutable')
-    hilink('@lsp.typemod.parameter.readonly.scala', '@parameter')
-    hilink('@lsp.type.property.scala', '@mutable')
-    hilink('@lsp.typemod.property.readonly.scala', '@property')
-    hilink('@lsp.type.variable.scala', '@mutable')
-    hilink('@lsp.typemod.variable.readonly.scala', '@variable')
-end
-
 local function set_filetype_gitcommit()
     hilink('gitcommitSummary', 'Constant')
     hilink('gitcommitOverflow', 'Error')
@@ -322,6 +302,32 @@ local function set_gui(colors, bg)
     hi('Directory', colors.ui, bg)
 end
 
+local function create_mutability_autocommand(pattern, ...)
+    local types = {...}
+
+    vim.api.nvim_create_autocmd('LspTokenUpdate', {
+        group = 'LspTokenUpdateForMutability',
+        pattern = { pattern },
+        callback = function(args)
+            local token = args.data.token
+            for _, type in ipairs(types) do
+                if token.type == type and not token.modifiers.readonly then
+                    vim.lsp.semantic_tokens.highlight_token(token, args.buf, args.data.client_id, '@mutable')
+                end
+            end
+        end
+    })
+end
+
+local function set_lsp_mutability_markers()
+    vim.api.nvim_set_hl(0, '@mutable', { underline = true })
+    vim.api.nvim_create_augroup('LspTokenUpdateForMutability', { clear = true })
+
+    create_mutability_autocommand('*.java', 'property')
+    create_mutability_autocommand('*.js', 'variable')
+    create_mutability_autocommand('*.scala', 'parameter', 'property', 'variable')
+end
+
 local function set_highlights(colors)
     hi('Normal', colors.light_white, colors.bg)
 
@@ -337,8 +343,6 @@ local function set_highlights(colors)
     set_treesitter(colors, colors.bg)
     set_lsp(colors, colors.bg)
 
-    set_filetype_mutability(colors, colors.bg)
-
     set_filetype_gitcommit()
     set_filetype_html()
     set_filetype_lua()
@@ -347,6 +351,8 @@ local function set_highlights(colors)
     set_filetype_xml()
 
     set_gui(colors, colors.bg)
+
+    set_lsp_mutability_markers()
 end
 
 return { set_highlights = set_highlights }
