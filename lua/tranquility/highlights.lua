@@ -280,7 +280,7 @@ local function set_gui(colors, bg)
     -- search
     hi('IncSearch', colors.light_black, colors.warning, mod.bold)
     hi('Search', colors.light_white, colors.ui_highlight)
-    hi('MatchParen', mod.none, colors.ui_highlight, mod.bold)
+    hi('MatchParen', colors.operator, colors.light_black, mod.bold)
 
     -- diagnostics
     hi('SpellBad', colors.warning, bg, mod.underline)
