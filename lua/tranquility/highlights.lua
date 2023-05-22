@@ -175,10 +175,10 @@ local function set_lsp(colors, bg)
     hi('DiagnosticSignWarning', colors.warning, bg)
     hi('DiagnosticSignInformation', colors.info, bg)
     hi('DiagnosticSignHint', colors.hint, bg)
-    hi('DiagnosticUnderlineError', colors.error, bg, mod.underline)
-    hi('DiagnosticUnderlineWarning', colors.warning, bg, mod.underline)
-    hi('DiagnosticUnderlineInformation', colors.info, bg, mod.underline)
-    hi('DiagnosticUnderlineHint', colors.hint, bg, mod.underline)
+    hi('DiagnosticUnderlineError', colors.error, colors.light_black, mod.underline)
+    hi('DiagnosticUnderlineWarning', colors.warning, colors.light_black, mod.underline)
+    hi('DiagnosticUnderlineInformation', colors.info, colors.light_black, mod.underline)
+    hi('DiagnosticUnderlineHint', colors.hint, colors.light_black, mod.underline)
     hilink('DiagnosticVirtualTextError', 'DiagnosticSignError')
     hilink('DiagnosticVirtualTextWarning', 'DiagnosticSignWarning')
     hilink('DiagnosticVirtualTextInformation', 'DiagnosticSignInformation')
@@ -283,7 +283,7 @@ local function set_gui(colors, bg)
     hi('MatchParen', colors.operator, colors.light_black, mod.bold)
 
     -- diagnostics
-    hi('SpellBad', colors.warning, bg, mod.underline)
+    hi('SpellBad', colors.warning, colors.light_black, mod.underline)
     hilink('SpellCap', 'SpellBad')
     hilink('SpellLocal', 'SpellBad')
     hilink('SpellRare', 'SpellBad')
@@ -319,8 +319,8 @@ local function create_mutability_autocommand(pattern, ...)
     })
 end
 
-local function set_lsp_mutability_markers()
-    vim.api.nvim_set_hl(0, '@mutable', { underline = true })
+local function set_lsp_mutability_markers(colors)
+    vim.api.nvim_set_hl(0, '@mutable', { bg = colors.light_black[1], underdotted = true, special = colors.info[1] })
     vim.api.nvim_create_augroup('LspTokenUpdateForMutability', { clear = true })
 
     create_mutability_autocommand('*.java', 'property')
@@ -352,7 +352,7 @@ local function set_highlights(colors)
 
     set_gui(colors, colors.bg)
 
-    set_lsp_mutability_markers()
+    set_lsp_mutability_markers(colors)
 end
 
 return { set_highlights = set_highlights }
