@@ -183,7 +183,7 @@ local function set_lsp(colors, bg)
     hilink('DiagnosticVirtualTextWarning', 'DiagnosticSignWarning')
     hilink('DiagnosticVirtualTextInformation', 'DiagnosticSignInformation')
     hilink('DiagnosticVirtualTextHint', 'DiagnosticSignHint')
-    hilink('DiagnosticUnnecessary', 'Ignore')
+    vim.api.nvim_set_hl(0, 'DiagnosticUnnecessary', { fg = colors.dark_white[1], underdotted = true, special = colors.warning[1] })
 end
 
 local function set_filetype_gitcommit()
