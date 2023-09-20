@@ -167,6 +167,8 @@ local function set_lsp(colors, bg)
     hilink('@lsp.type.type', '@type')
     hilink('@lsp.type.variable', '@variable')
 
+    hi('LspCodeLens', colors.info, bg, mod.italic)
+    hilink('LspCodeLensSeparator', 'LspCodeLens')
     hilink('LspReferenceText', 'DiffChange')
     hilink('LspReferenceRead', 'DiffAdd')
     hilink('LspReferenceWrite', 'DiffDelete')
