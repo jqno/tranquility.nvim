@@ -210,7 +210,8 @@ local function set_filetype_lua()
     hilink('luaFunctionBlock', 'Function')
 end
 
-local function set_filetype_markdown()
+local function set_filetype_markdown(colors, bg)
+    hi('@text.quote.markdown', colors.comment, bg, mod.italic)
     hilink('markdownBoldDelimiter', 'Delimiter')
     hilink('markdownCodeDelimiter', 'Delimiter')
     hilink('markdownItalicDelimiter', 'Delimiter')
@@ -352,7 +353,7 @@ local function set_highlights(colors)
     set_filetype_gitcommit()
     set_filetype_html()
     set_filetype_lua()
-    set_filetype_markdown()
+    set_filetype_markdown(colors, colors.bg)
     set_filetype_vimwiki(colors, colors.bg)
     set_filetype_xml()
 
