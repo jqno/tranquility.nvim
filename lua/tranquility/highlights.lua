@@ -136,6 +136,8 @@ local function set_treesitter(colors, bg)
     hilink('@tag.attribute', '@type')
     hilink('@tag.delimiter', '@punctuation.delimiter')
     hilink('@text.danger', '@error')
+    hilink('@text.danger.comment', '@text.warning')
+    hilink('@text.todo.comment', '@text.warning')
     hilink('@type.builtin', '@type')
     hilink('@type.qualifier', '@keyword')
     hilink('@variable.builtin', '@keyword')
@@ -194,6 +196,9 @@ local function set_lsp(colors, bg)
     hilink('DiagnosticVirtualTextInfo', 'DiagnosticSignInfo')
     hilink('DiagnosticVirtualTextHint', 'DiagnosticSignHint')
     vim.api.nvim_set_hl(0, 'DiagnosticUnnecessary', { fg = colors.dark_white[1], underdotted = true, special = colors.warning[1] })
+
+    -- Needed to properly display treesitter TODO comment highlights; see https://www.reddit.com/r/neovim/comments/14ecf5o/semantic_highlights_messing_with_todo_comments/
+    vim.api.nvim_set_hl(0, '@lsp.type.comment', {})
 end
 
 local function set_filetype_gitcommit()
