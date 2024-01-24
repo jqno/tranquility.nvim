@@ -220,7 +220,8 @@ local function set_filetype_lua()
 end
 
 local function set_filetype_markdown(colors, bg)
-    hi('@text.quote.markdown', colors.comment, bg, mod.italic)
+    hi('@markup.quote.markdown', colors.comment, bg, mod.italic)
+    hilink('@markup.heading', 'Title')
     hilink('markdownBoldDelimiter', 'Delimiter')
     hilink('markdownCodeDelimiter', 'Delimiter')
     hilink('markdownItalicDelimiter', 'Delimiter')
