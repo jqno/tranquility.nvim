@@ -23,16 +23,29 @@ local palettes = {
 
 local mappings = {
     selenized = {
+        -- Syntax elements
+        identifier = 'light_white',
         statement = 'dark_white',
-        comment = 'light_green',
         literal = 'light_green',
+        type = 'light_white',
         operator = 'dark_yellow',
+        comment = 'light_green',
+        link = 'light_blue',
+        conceal = 'dark_white',
+
+        -- UI elements
         ui = 'dark_green',
         ui_highlight = 'dark_blue',
+        ui_background = 'light_black',
+        highlighted_background = 'light_black',
+        visual = 'light_black',
         error = 'light_red',
         warning = 'light_magenta',
         info = 'light_cyan',
-        hint = 'light_white'
+        hint = 'light_white',
+        added = 'light_green',
+        changed = 'light_yellow',
+        deleted = 'light_red'
     }
 }
 
