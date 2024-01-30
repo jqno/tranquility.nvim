@@ -56,18 +56,9 @@ local function define_colors(theme_name)
 
     local preset_colors = vim.deepcopy(palettes[theme.palette])
     local colors = vim.tbl_extend('force', preset_colors, overrides.palette or {})
-
-    colors.statement = vim.deepcopy(colors[theme.mappings.statement])
-    colors.comment = vim.deepcopy(colors[theme.mappings.comment])
-    colors.literal = vim.deepcopy(colors[theme.mappings.literal])
-    colors.operator = vim.deepcopy(colors[theme.mappings.operator])
-    colors.ui = vim.deepcopy(colors[theme.mappings.ui])
-    colors.ui_highlight = vim.deepcopy(colors[theme.mappings.ui_highlight])
-    colors.error = vim.deepcopy(colors[theme.mappings.error])
-    colors.warning = vim.deepcopy(colors[theme.mappings.warning])
-    colors.info = vim.deepcopy(colors[theme.mappings.info])
-    colors.hint = vim.deepcopy(colors[theme.mappings.hint])
-    colors.invert_statusline = overrides.invert_statusline
+    for key, _ in pairs(theme.mappings) do
+        colors[key] = vim.deepcopy(colors[theme.mappings[key]])
+    end
 
     if theme.transparent_background then
         colors.bg = util.mod.none
