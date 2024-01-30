@@ -1,5 +1,5 @@
 local mod = {
-    none = { 'NONE', 'NONE' },
+    none = 'NONE',
     bold = 'bold',
     italic = 'italic',
     underline = 'underline',
@@ -9,13 +9,13 @@ local mod = {
 local function hi(group, fg, bg, gui)
     local cmd = 'highlight ' .. group
     if fg ~= nil then
-        cmd = cmd .. ' guifg=' .. fg[1] .. ' ctermfg=' .. fg[2]
+        cmd = cmd .. ' guifg=' .. fg
     end
     if bg ~= nil then
-        cmd = cmd .. ' guibg=' .. bg[1] .. ' ctermbg=' .. bg[2]
+        cmd = cmd .. ' guibg=' .. bg
     end
     if gui == nil then
-        gui = mod.none[1]
+        gui = mod.none
     end
     cmd = cmd .. ' gui=' .. gui
     vim.cmd(cmd)
