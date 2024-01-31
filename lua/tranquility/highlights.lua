@@ -54,6 +54,7 @@ local function set_cmp(colors)
     hi('CmpItemAbbrMatch', { fg = colors.ui_highlight })
     hi('CmpItemAbbrMatchFuzzy', { fg = colors.ui_highlight })
     hi('CmpItemAbbrDeprecated', { fg = colors.identifier, strikethrough = true })
+    hi('CmpItemKind', { fg = colors.ui_highlight })
 end
 
 local function set_floaterm()
