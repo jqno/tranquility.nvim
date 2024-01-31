@@ -22,7 +22,7 @@ local palettes = {
 }
 
 local mappings = {
-    selenized = {
+    tranquility = {
         -- Syntax elements
         identifier = 'light_white',
         statement = 'dark_white',
@@ -58,24 +58,17 @@ local themes = {
     selenized = {
         palette = 'selenized',
         transparent_background = true,
-        mappings = mappings.selenized
+        mappings = mappings.tranquility
     }
 }
 
 local function define_colors(theme_name)
-    local overrides = vim.g.tranquility_overrides or {}
+    local theme = themes[theme_name]
+    local palette = palettes[theme.palette]
 
-    local preset_theme = themes[theme_name]
-    local theme = vim.deepcopy(preset_theme)
-    theme.mappings = vim.tbl_extend('force', preset_theme.mappings, overrides.mappings or {})
-    if overrides.transparent_background ~= nil then
-        theme.transparent_background = overrides.transparent_background
-    end
-
-    local preset_colors = vim.deepcopy(palettes[theme.palette])
-    local colors = vim.tbl_extend('force', preset_colors, overrides.palette or {})
+    local colors = {}
     for key, _ in pairs(theme.mappings) do
-        colors[key] = vim.deepcopy(colors[theme.mappings[key]])
+        colors[key] = palette[theme.mappings[key]]
     end
 
     if theme.transparent_background then
