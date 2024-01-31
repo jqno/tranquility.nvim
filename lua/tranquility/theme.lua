@@ -32,13 +32,18 @@ local mappings = {
         comment = 'light_green',
         link = 'light_blue',
         conceal = 'dark_white',
+        highlighted_background = 'light_black',
 
         -- UI elements
-        ui = 'dark_green',
+        ui_text = 'light_white',
+        ui_widget = 'dark_green',
         ui_highlight = 'dark_blue',
         ui_background = 'light_black',
-        highlighted_background = 'light_black',
+        ui_dim_text = 'dark_white',
+        ui_dim_background = 'dark_black',
         visual = 'light_black',
+
+        -- Status elements
         error = 'light_red',
         warning = 'light_magenta',
         info = 'light_cyan',

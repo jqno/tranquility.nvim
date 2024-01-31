@@ -47,7 +47,7 @@ local function set_visual_elements(colors)
     hi('NonText', 'Ignore')
     hi('EndOfBuffer', 'Ignore')
     hi('Conceal', { fg = colors.conceal })
-    hi('FloatBorder', { fg = colors.ui, bg = mod.none })
+    hi('FloatBorder', { fg = colors.ui_widget })
 end
 
 local function set_cmp(colors)
@@ -77,8 +77,8 @@ local function set_nvimtree()
 end
 
 local function set_telescope(colors)
-    hi('TelescopeBorder', { fg = colors.ui, bg = mod.none })
-    hi('TelescopeSelection', { fg = mod.none, bg = colors.ui })
+    hi('TelescopeBorder', { fg = colors.ui_widget })
+    hi('TelescopeSelection', { bg = colors.ui_widget })
     hi('TelescopeMatching', { fg = colors.ui_highlight, bold = true })
 end
 
@@ -199,7 +199,7 @@ local function set_lsp(colors)
     hi('DiagnosticVirtualTextWarn', 'DiagnosticSignWarn')
     hi('DiagnosticVirtualTextInfo', 'DiagnosticSignInfo')
     hi('DiagnosticVirtualTextHint', 'DiagnosticSignHint')
-    vim.api.nvim_set_hl(0, 'DiagnosticUnnecessary', { fg = colors.dark_white[1], underdotted = true, special = colors.warning[1] })
+    vim.api.nvim_set_hl(0, 'DiagnosticUnnecessary', { fg = colors.conceal, underdotted = true, special = colors.warning })
 
     -- Needed to properly display treesitter TODO comment highlights; see https://www.reddit.com/r/neovim/comments/14ecf5o/semantic_highlights_messing_with_todo_comments/
     vim.api.nvim_set_hl(0, '@lsp.type.comment', {})
@@ -246,21 +246,16 @@ end
 
 local function set_gui(colors)
     -- messages
-    hi('ErrorMsg', { fg = colors.light_white, bg = colors.error, bold = true })
-    hi('WarningMsg', { fg = colors.light_black, bg = colors.warning, bold = true })
-    hi('MsgArea', { fg = colors.light_white })
+    hi('ErrorMsg', { fg = colors.ui_text, bg = colors.error, bold = true })
+    hi('WarningMsg', { fg = colors.ui_background, bg = colors.warning, bold = true })
+    hi('MsgArea', { fg = colors.ui_text })
     hi('ModeMsg', { fg = colors.ui_highlight })
     hi('MoreMsg', 'ModeMsg')
     hi('Question', 'ModeMsg')
 
     -- statusline and other lines
-    if colors.invert_statusline then
-        hi('StatusLine', { fg = colors.dark_white, bg = colors.light_black })
-        hi('StatusLineNC', { fg = colors.ui, bg = colors.light_white })
-    else
-        hi('StatusLine', { fg = colors.ui, bg = colors.light_white })
-        hi('StatusLineNC', { fg = colors.dark_white, bg = colors.light_black })
-    end
+    hi('StatusLine', { fg = colors.ui_text, bg = colors.ui_background })
+    hi('StatusLineNC', { fg = colors.ui_dim_text, bg = colors.ui_dim_background })
     hi('StatusLineTerm', 'StatusLine')
     hi('StatusLineTermNC', 'StatusLineNC')
     hi('TabLine', 'StatusLineNC')
@@ -268,38 +263,38 @@ local function set_gui(colors)
     hi('TabLineSel', 'StatusLine')
     hi('ToolbarButton', 'StatusLine')
     hi('ToolbarLine', 'StatusLineNC')
-    hi('WildMenu', { fg = colors.ui, bg = colors.light_white })
-    hi('VertSplit', { fg = colors.light_black, bg = colors.light_black })
-    hi('WinSeparator', { fg = colors.ui, bg = mod.none })
+    hi('WildMenu', { fg = colors.ui_widget, bg = colors.ui_text })
+    hi('VertSplit', { fg = colors.ui_background, bg = colors.ui_background })
+    hi('WinSeparator', { fg = colors.ui_widget })
 
     -- cursor
-    hi('ColorColumn', { fg = mod.none, bg = colors.ui_highlight })
-    hi('CursorColumn', { fg = mod.none, bg = colors.ui_background })
+    hi('ColorColumn', { bg = colors.ui_highlight })
+    hi('CursorColumn', { bg = colors.ui_background })
     hi('CursorLine', 'CursorColumn')
-    hi('Cursor', { fg = mod.none, bg = colors.ui_highlight })
+    hi('Cursor', { bg = colors.ui_highlight })
     hi('CursorIM', 'Cursor')
     hi('lCursor', 'Cursor')
     hi('LineNr', { fg = colors.statement })
-    hi('CursorLineNr', { fg = colors.ui })
+    hi('CursorLineNr', { fg = colors.ui_widget })
     hi('SignColumn', { fg = mod.none })
 
     -- visual
-    hi('Visual', { fg = mod.none, bg = colors.visual, bold = true })
+    hi('Visual', { bg = colors.visual, bold = true })
     hi('VisualNOS', 'Visual')
 
     -- Pmenu
-    hi('Pmenu', { fg = colors.light_white, bg = colors.light_black })
-    hi('PmenuSel', { fg = colors.light_white, bg = colors.ui, bold = true })
-    hi('PmenuSbar', { fg = mod.none, bg = colors.dark_white })
-    hi('PmenuThumb', { fg = mod.none, bg = colors.ui })
+    hi('Pmenu', { fg = colors.ui_text, bg = colors.ui_background })
+    hi('PmenuSel', { fg = colors.ui_text, bg = colors.ui_widget, bold = true })
+    hi('PmenuSbar', { bg = colors.ui_widget })
+    hi('PmenuThumb', { bg = colors.ui_widget })
 
     -- folds
-    hi('FoldColumn', { fg = colors.dark_white })
-    hi('Folded', { fg = colors.dark_white, italic = true })
+    hi('FoldColumn', { fg = colors.ui_dim_text })
+    hi('Folded', { fg = colors.ui_dim_text, italic = true })
 
     -- search
-    hi('IncSearch', { fg = colors.light_black, bg = colors.warning, bold = true })
-    hi('Search', { fg = colors.light_white, bg = colors.ui_highlight })
+    hi('IncSearch', { fg = colors.highlighted_background, bg = colors.warning, bold = true })
+    hi('Search', { fg = colors.highlighted_background, bg = colors.ui_highlight, bold = true })
     hi('MatchParen', { fg = colors.operator, bg = colors.highlighted_background, bold = true })
 
     -- diagnostics
@@ -319,7 +314,7 @@ local function set_gui(colors)
     hi('diffLine', 'DiffText')
 
     -- other
-    hi('Directory', { fg = colors.ui })
+    hi('Directory', { fg = colors.ui_highlight })
 end
 
 local function create_mutability_autocommand(pattern, ...)
@@ -340,7 +335,7 @@ local function create_mutability_autocommand(pattern, ...)
 end
 
 local function set_lsp_mutability_markers(colors)
-    vim.api.nvim_set_hl(0, '@mutable', { bg = colors.light_black[1], underdotted = true, special = colors.info[1] })
+    vim.api.nvim_set_hl(0, '@mutable', { bg = colors.highlighted_background, underdotted = true, special = colors.info })
     vim.api.nvim_create_augroup('LspTokenUpdateForMutability', { clear = true })
 
     create_mutability_autocommand('*.java', 'property')
