@@ -200,10 +200,10 @@ local function set_lsp(colors)
     hi('DiagnosticVirtualTextWarn', 'DiagnosticSignWarn')
     hi('DiagnosticVirtualTextInfo', 'DiagnosticSignInfo')
     hi('DiagnosticVirtualTextHint', 'DiagnosticSignHint')
-    vim.api.nvim_set_hl(0, 'DiagnosticUnnecessary', { fg = colors.conceal, underdotted = true, special = colors.warning })
+    hi('DiagnosticUnnecessary', { fg = colors.conceal, underline = true, special = colors.warning })
 
     -- Needed to properly display treesitter TODO comment highlights; see https://www.reddit.com/r/neovim/comments/14ecf5o/semantic_highlights_messing_with_todo_comments/
-    vim.api.nvim_set_hl(0, '@lsp.type.comment', {})
+    hi('@lsp.type.comment', {})
 end
 
 local function set_filetype_gitcommit()
@@ -336,7 +336,7 @@ local function create_mutability_autocommand(pattern, ...)
 end
 
 local function set_lsp_mutability_markers(colors)
-    vim.api.nvim_set_hl(0, '@mutable', { bg = colors.highlighted_background, underdotted = true, special = colors.info })
+    hi('@mutable', { bg = colors.highlighted_background, underline = true, special = colors.info })
     vim.api.nvim_create_augroup('LspTokenUpdateForMutability', { clear = true })
 
     create_mutability_autocommand('*.java', 'property')
