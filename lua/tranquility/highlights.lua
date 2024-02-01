@@ -3,6 +3,7 @@ local mod = util.mod
 local hi = util.hi
 
 local function set_native_syntax(colors)
+    hi('Normal', { fg = colors.identifier, bg = colors.bg })
     hi('Comment', { fg = colors.comment })
     hi('Constant', { fg = colors.literal })
     hi('Debug', { fg = colors.warning })
@@ -232,10 +233,6 @@ local function set_filetype_markdown(colors)
     hi('markdownCode', 'Keyword')
 end
 
-local function set_filetype_vimwiki(colors)
-    hi('VimwikiWeblink1', { fg = colors.literal, underline = true })
-end
-
 local function set_filetype_xml()
     hi('xmlAttrib', '@tag.attribute')
     hi('xmlAttribPunct', '@tag.delimiter')
@@ -328,7 +325,7 @@ local function create_mutability_autocommand(pattern, ...)
             local token = args.data.token
             for _, type in ipairs(types) do
                 if token.type == type and not token.modifiers.readonly then
-                    vim.lsp.semantic_tokens.highlight_token(token, args.buf, args.data.client_id, '@mutable')
+                    vim.lsp.semantic_tokens.highlight_token(token, args.buf, args.data.client_id, 'Mutable')
                 end
             end
         end
@@ -336,7 +333,7 @@ local function create_mutability_autocommand(pattern, ...)
 end
 
 local function set_lsp_mutability_markers(colors)
-    hi('@mutable', { bg = colors.highlighted_background, underline = true, special = colors.info })
+    hi('Mutable', { bg = colors.highlighted_background, underline = true, special = colors.info })
     vim.api.nvim_create_augroup('LspTokenUpdateForMutability', { clear = true })
 
     create_mutability_autocommand('*.java', 'property')
@@ -345,8 +342,6 @@ local function set_lsp_mutability_markers(colors)
 end
 
 local function set_highlights(colors)
-    hi('Normal', { fg = colors.identifier, bg = colors.bg })
-
     set_native_syntax(colors)
     set_visual_elements(colors)
 
@@ -363,7 +358,6 @@ local function set_highlights(colors)
     set_filetype_html()
     set_filetype_lua()
     set_filetype_markdown(colors)
-    set_filetype_vimwiki(colors)
     set_filetype_xml()
 
     set_gui(colors)
