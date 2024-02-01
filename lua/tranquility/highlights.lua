@@ -3,7 +3,7 @@ local mod = util.mod
 local hi = util.hi
 
 local function set_native_syntax(colors)
-    hi('Normal', { fg = colors.identifier, bg = colors.bg })
+    hi('Normal', { fg = colors.identifier, bg = colors.background })
     hi('Comment', { fg = colors.comment })
     hi('Constant', { fg = colors.literal })
     hi('Debug', { fg = colors.warning })
