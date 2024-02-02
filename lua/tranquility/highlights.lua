@@ -179,6 +179,9 @@ local function set_lsp(colors)
     hi('@lsp.type.type', '@type')
     hi('@lsp.type.variable', '@variable')
 
+    hi('@lsp.typemod.keyword.documentation', '@keyword')
+    hi('@lsp.typemod.parameter.documentation', 'Normal')
+
     hi('LspCodeLens', 'Ignore')
     hi('LspCodeLensSeparator', 'LspCodeLens')
     hi('LspReferenceText', 'DiffChange')
