@@ -31,7 +31,7 @@ local themes = {
             -- Syntax elements
             identifier = 'fg_1',
             statement = 'dim_0',
-            literal = 'bright_violet',
+            literal = 'bright_orange',
             type = 'fg_1',
             operator = 'yellow',
             comment = 'bright_green',
@@ -44,7 +44,7 @@ local themes = {
             cursor = 'fg_1',
             ui_text = 'fg_1',
             ui_widget = 'green',
-            ui_highlight = 'orange',
+            ui_highlight = 'violet',
             ui_extra_highlight = 'cyan',
             ui_background = 'bg_2',
             ui_dim_text = 'dim_0',
