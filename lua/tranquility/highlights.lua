@@ -203,7 +203,7 @@ local function set_lsp(colors)
     hi('DiagnosticVirtualTextHint', 'DiagnosticSignHint')
     hi('DiagnosticUnnecessary', { fg = colors.conceal, underline = true, special = colors.warning })
 
-    -- Needed to properly display treesitter TODO comment highlights; see https://www.reddit.com/r/neovim/comments/14ecf5o/semantic_highlights_messing_with_todo_comments/
+    -- needed to properly display treesitter TODO comment highlights; see https://www.reddit.com/r/neovim/comments/14ecf5o/semantic_highlights_messing_with_todo_comments/
     hi('@lsp.type.comment', {})
 end
 
@@ -231,6 +231,12 @@ local function set_filetype_markdown(colors)
     hi('markdownCodeDelimiter', 'Delimiter')
     hi('markdownItalicDelimiter', 'Delimiter')
     hi('markdownCode', 'Keyword')
+end
+
+local function set_filetype_scala()
+    -- disable some LSP highlights, because Treesitter's are better
+    hi('@lsp.type.method.scala', {})
+    hi('@lsp.type.keyword.scala', {})
 end
 
 local function set_filetype_xml()
@@ -358,6 +364,7 @@ local function set_highlights(colors)
     set_filetype_html()
     set_filetype_lua()
     set_filetype_markdown(colors)
+    set_filetype_scala()
     set_filetype_xml()
 
     set_gui(colors)
