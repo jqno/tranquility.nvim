@@ -47,7 +47,7 @@ local function set_visual_elements(colors)
     hi('Terminal', 'Normal')
     hi('NonText', 'Ignore')
     hi('EndOfBuffer', 'Ignore')
-    hi('Conceal', { fg = colors.conceal })
+    hi('Conceal', 'Ignore')
     hi('FloatBorder', { fg = colors.ui_widget })
 end
 
@@ -80,7 +80,7 @@ end
 
 local function set_telescope(colors)
     hi('TelescopeBorder', { fg = colors.ui_widget })
-    hi('TelescopeSelection', { bg = colors.ui_widget })
+    hi('TelescopeSelection', { bg = colors.visual })
     hi('TelescopeMatching', { fg = colors.ui_highlight, bold = true })
 end
 
@@ -179,7 +179,7 @@ local function set_lsp(colors)
     hi('@lsp.type.type', '@type')
     hi('@lsp.type.variable', '@variable')
 
-    hi('LspCodeLens', { fg = colors.ui_highlight, italic = true })
+    hi('LspCodeLens', 'Ignore')
     hi('LspCodeLensSeparator', 'LspCodeLens')
     hi('LspReferenceText', 'DiffChange')
     hi('LspReferenceRead', 'DiffAdd')
@@ -269,7 +269,7 @@ local function set_gui(colors)
     hi('ColorColumn', { bg = colors.ui_highlight })
     hi('CursorColumn', { bg = colors.ui_background })
     hi('CursorLine', 'CursorColumn')
-    hi('Cursor', { bg = colors.ui_highlight })
+    hi('Cursor', { bg = colors.cursor })
     hi('CursorIM', 'Cursor')
     hi('lCursor', 'Cursor')
     hi('LineNr', { fg = colors.statement })
@@ -291,8 +291,8 @@ local function set_gui(colors)
     hi('Folded', { fg = colors.ui_dim_text, italic = true })
 
     -- search
-    hi('IncSearch', { fg = colors.highlighted_background, bg = colors.warning, bold = true })
     hi('Search', { fg = colors.highlighted_background, bg = colors.ui_highlight, bold = true })
+    hi('IncSearch', 'Search')
     hi('MatchParen', { fg = colors.operator, bg = colors.highlighted_background, bold = true })
 
     -- diagnostics
