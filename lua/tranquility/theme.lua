@@ -41,10 +41,11 @@ local themes = {
 
             -- UI elements
             background = 'bg_0',
-            cursor = 'bg_1',
+            cursor = 'fg_1',
             ui_text = 'fg_1',
             ui_widget = 'green',
             ui_highlight = 'orange',
+            ui_extra_highlight = 'cyan',
             ui_background = 'bg_2',
             ui_dim_text = 'dim_0',
             ui_dim_background = 'bg_1',

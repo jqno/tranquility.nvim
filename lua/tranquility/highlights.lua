@@ -55,7 +55,7 @@ local function set_cmp(colors)
     hi('CmpItemAbbrMatch', { fg = colors.ui_highlight })
     hi('CmpItemAbbrMatchFuzzy', { fg = colors.ui_highlight })
     hi('CmpItemAbbrDeprecated', { fg = colors.identifier, strikethrough = true })
-    hi('CmpItemKind', { fg = colors.ui_highlight })
+    hi('CmpItemKind', { fg = colors.ui_extra_highlight })
 end
 
 local function set_floaterm()
@@ -272,7 +272,7 @@ local function set_gui(colors)
     hi('WinSeparator', { fg = colors.ui_widget })
 
     -- cursor
-    hi('ColorColumn', { bg = colors.ui_highlight })
+    hi('ColorColumn', { bg = colors.ui_extra_highlight })
     hi('CursorColumn', { bg = colors.ui_background })
     hi('CursorLine', 'CursorColumn')
     hi('Cursor', { bg = colors.cursor })
@@ -297,8 +297,8 @@ local function set_gui(colors)
     hi('Folded', { fg = colors.ui_dim_text, italic = true })
 
     -- search
+    hi('IncSearch', { fg = colors.highlighted_background, bg = colors.ui_extra_highlight, bold = true })
     hi('Search', { fg = colors.highlighted_background, bg = colors.ui_highlight, bold = true })
-    hi('IncSearch', 'Search')
     hi('MatchParen', { fg = colors.operator, bg = colors.highlighted_background, bold = true })
 
     -- diagnostics
