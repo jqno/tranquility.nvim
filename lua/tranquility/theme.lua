@@ -31,9 +31,9 @@ local themes = {
             -- Syntax elements
             identifier = 'fg_1',
             statement = 'dim_0',
-            literal = 'bright_orange',
-            type = 'fg_1',
-            operator = 'yellow',
+            literal = 'bright_yellow',
+            type = 'fg_0',
+            operator = 'orange',
             comment = 'bright_green',
             link = 'bright_blue',
             conceal = 'dim_0',
