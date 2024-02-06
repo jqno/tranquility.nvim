@@ -60,6 +60,60 @@ local themes = {
             changed = 'bright_yellow',
             deleted = 'bright_red'
         }
+    },
+    nord = {
+        transparent_background = true,
+        palette = {
+            polar_night_0 = '#2e3440',
+            polar_night_1 = '#3b4252',
+            polar_night_2 = '#434c5e',
+            polar_night_3 = '#4c566a',
+            snow_storm_0 = '#d8dee9',
+            snow_storm_1 = '#e5e9f0',
+            snow_storm_2 = '#eceff4',
+            frost_0 = '#8fbcbb',
+            frost_1 = '#88c0d0',
+            frost_2 = '#81a1c1',
+            frost_3 = '#5e81ac',
+            aurora_0 = '#bf616a',
+            aurora_1 = '#d08770',
+            aurora_2 = '#ebcb8b',
+            aurora_3 = '#a3be8c',
+            aurora_4 = '#b48ead'
+        },
+        mappings = {
+            -- Syntax elements
+            identifier = 'snow_storm_2',
+            statement = 'frost_1',
+            literal = 'aurora_2',
+            type = 'snow_storm_0',
+            operator = 'frost_0',
+            comment = 'aurora_3',
+            link = 'frost_0',
+            conceal = 'frost_3',
+            highlighted_background = 'polar_night_2',
+
+            -- UI elements
+            background = 'polar_night_0',
+            cursor = 'snow_storm_2',
+            ui_text = 'snow_storm_2',
+            ui_widget = 'aurora_3',
+            ui_highlight = 'aurora_4',
+            ui_extra_highlight = 'frost_1',
+            ui_background = 'polar_night_2',
+            ui_dim_text = 'polar_night_3',
+            ui_dim_background = 'polar_night_1',
+            visual = 'polar_night_2',
+
+            -- Status elements
+            error = 'aurora_0',
+            warning = 'aurora_4',
+            info = 'frost_1',
+            hint = 'snow_storm_2',
+            added = 'aurora_3',
+            changed = 'aurora_2',
+            deleted = 'aurora_0'
+        }
     }
 }
 
