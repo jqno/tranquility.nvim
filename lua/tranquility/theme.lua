@@ -41,15 +41,15 @@ local themes = {
 
             -- UI elements
             background = 'bg_0',
+            ui_dim_background = 'bg_1',
+            ui_background = 'bg_2',
+            visual = 'bg_2',
             cursor = 'fg_1',
             ui_text = 'fg_1',
+            ui_dim_text = 'dim_0',
             ui_widget = 'green',
             ui_highlight = 'violet',
             ui_extra_highlight = 'cyan',
-            ui_background = 'bg_2',
-            ui_dim_text = 'dim_0',
-            ui_dim_background = 'bg_1',
-            visual = 'bg_2',
 
             -- Status elements
             error = 'bright_red',
@@ -95,15 +95,15 @@ local themes = {
 
             -- UI elements
             background = 'polar_night_0',
+            ui_dim_background = 'polar_night_1',
+            ui_background = 'polar_night_2',
+            visual = 'polar_night_2',
             cursor = 'snow_storm_2',
             ui_text = 'snow_storm_2',
+            ui_dim_text = 'polar_night_3',
             ui_widget = 'aurora_3',
             ui_highlight = 'aurora_4',
             ui_extra_highlight = 'frost_1',
-            ui_background = 'polar_night_2',
-            ui_dim_text = 'polar_night_3',
-            ui_dim_background = 'polar_night_1',
-            visual = 'polar_night_2',
 
             -- Status elements
             error = 'aurora_0',
