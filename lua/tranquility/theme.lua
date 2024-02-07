@@ -178,6 +178,59 @@ local themes = {
             changed = 'blue',
             deleted = 'red'
         }
+    },
+    intellij = {
+        transparent_background = true,
+        palette = {
+            background = '#1e1f22',
+            bg_inline_hint = '#393b40',
+            bg_injected_lang = '#293c40',
+            text = '#bcbec4',
+            unused_symbol = '#6f737a',
+            fg_inline_hint = '#858a94',
+            keyword = '#cf8e6d',
+            string = '#6aab73',
+            metadata = '#b3ae60',
+            hyperlink = '#548af7',
+            button = '#3675f0',
+            weak_warning = '#857042',
+            typo = '#7ec482',
+            error = '#fa6675',
+            warning = '#f2c55c',
+        },
+        mappings = {
+            -- Syntax elements
+            identifier = 'text',
+            statement = 'unused_symbol',
+            literal = 'metadata',
+            type = 'text',
+            operator = 'keyword',
+            comment = 'string',
+            link = 'hyperlink',
+            conceal = 'fg_inline_hint',
+            highlighted_background = 'bg_injected_lang',
+
+            -- UI elements
+            background = 'background',
+            ui_dim_background = 'bg_inline_hint',
+            ui_background = 'bg_injected_lang',
+            visual = 'bg_injected_lang',
+            cursor = 'text',
+            ui_text = 'text',
+            ui_dim_text = 'fg_inline_hint',
+            ui_widget = 'button',
+            ui_highlight = 'weak_warning',
+            ui_extra_highlight = 'typo',
+
+            -- Status elements
+            error = 'error',
+            warning = 'warning',
+            info = 'typo',
+            hint = 'text',
+            added = 'typo',
+            changed = 'warning',
+            deleted = 'error'
+        }
     }
 }
 
