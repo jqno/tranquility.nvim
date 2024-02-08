@@ -43,3 +43,11 @@ return {
     end
 }
 ```
+
+## Inspiration
+
+I first got the idea watching a talk by [Venkat Subramaniam](https://twitter.com/venkat_s), who uses a similar colorscheme in his editor.
+
+Then I found a few colorschemes, like [zenbones.nvim](https://github.com/mcchrish/zenbones.nvim), which offer different colorschemes following a specific philosophy but based on different well-known color palettes.
+
+This colorscheme is written in the Lua programming language, whose name means 'moon' in Portuguese, and the first implemented palette was the [Selenized palette](https://github.com/jan-warchol/selenized), whose name also refers to the moon. To stick with this lunar theme, the name of this colorscheme is inspired by the moon as well: it refers to the Sea of Tranquility, which loops back nicely to the quiet philosophy.
