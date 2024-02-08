@@ -2,6 +2,7 @@ local util = require('tranquility.util')
 
 local themes = {
     selenized = {
+        name = 'Tranquility',
         transparent_background = true,
         palette = {
             bg_0 = '#181818',
@@ -62,6 +63,7 @@ local themes = {
         }
     },
     nord = {
+        name = 'Tranquil Nord',
         transparent_background = true,
         palette = {
             polar_night_0 = '#2e3440',
@@ -116,6 +118,7 @@ local themes = {
         }
     },
     catppuccin = {
+        name = 'Tranquil Catppuccin',
         transparent_background = true,
         palette = {
             rosewater = '#f5e0dc',
@@ -180,6 +183,7 @@ local themes = {
         }
     },
     intellij = {
+        name = 'Tranquil IntelliJ',
         transparent_background = true,
         palette = {
             background = '#1e1f22',
@@ -245,6 +249,8 @@ local function define_colors(theme_name)
     if theme.transparent_background then
         colors.background = util.mod.none
     end
+
+    colors.theme_name = theme.name
 
     return colors
 end
