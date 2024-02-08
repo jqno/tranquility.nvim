@@ -12,6 +12,7 @@ local function setup(name)
     clear()
     colors = theme.define_colors(name)
     highlights.set_highlights(colors)
+    vim.g.colors_name = colors.theme_name
 end
 
 local function theme_colors()
