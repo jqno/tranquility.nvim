@@ -32,10 +32,14 @@ return {
 
     config = function()
         vim.cmd.colorscheme('tranquility')
+
         -- Or pick another scheme:
         -- vim.cmd.colorscheme('tranquil-nord')
         -- vim.cmd.colorscheme('tranquil-catppuccin')
         -- vim.cmd.colorscheme('tranquil-intellij')
+
+        -- Or let Neovim pick one at random:
+        -- vim.cmd.colorscheme('tranquil-random')
     end
 }
 ```

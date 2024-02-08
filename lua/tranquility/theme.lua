@@ -255,4 +255,15 @@ local function define_colors(theme_name)
     return colors
 end
 
-return { define_colors = define_colors }
+local function random()
+    local keys = {}
+    for key in pairs(themes) do
+        table.insert(keys, key)
+    end
+
+    math.randomseed(os.time())
+    local index = math.random(#keys)
+    return keys[index]
+end
+
+return { define_colors = define_colors, random = random }
