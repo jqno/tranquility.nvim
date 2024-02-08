@@ -1,6 +1,6 @@
 # Tranquility.nvim
 
-A quiet colorscheme for Neovim.
+A collection of quiet dark colorschemes for Neovim.
 
 ## Philosophy
 
@@ -10,8 +10,17 @@ It provides a collection of colorschemes derived from different well-known palet
 
 ## Screenshot
 
-![tranquility](doc/tranquility.png)
-Tranquility: based on [Selenized palette](https://github.com/jan-warchol/selenized)
+![tranquility](doc/tranquility.webp)
+Tranquility: based on [Selenized Dark palette](https://github.com/jan-warchol/selenized)
+
+![tranquil-nord](doc/tranquil-nord.webp)
+Tranquil Nord: based on [Nord palette](https://www.nordtheme.com/)
+
+![tranquil-catppuccin](doc/tranquil-catppuccin.webp)
+Tranquil Catppuccin: based on [Catppuccin Mocha palette](https://github.com/catppuccin/catppuccin)
+
+![tranquil-intellij](doc/tranquil-intellij.webp)
+Tranquil IntelliJ: based on [IntelliJ palette](https://www.jetbrains.com/idea/)
 
 ## Configuration
 
@@ -23,6 +32,10 @@ return {
 
     config = function()
         vim.cmd.colorscheme('tranquility')
+        -- Or pick another scheme:
+        -- vim.cmd.colorscheme('tranquil-nord')
+        -- vim.cmd.colorscheme('tranquil-catppuccin')
+        -- vim.cmd.colorscheme('tranquil-intellij')
     end
 }
 ```
