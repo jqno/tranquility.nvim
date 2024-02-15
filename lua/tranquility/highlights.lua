@@ -10,7 +10,7 @@ local function set_native_syntax(colors)
     hi('Delimiter', { fg = colors.operator })
     hi('Error', { fg = colors.error })
     hi('Identifier', { fg = colors.identifier })
-    hi('Ignore', { fg = colors.conceal, italic = true })
+    hi('Ignore', { fg = colors.conceal, bold = true, italic = true })
     hi('Operator', { fg = colors.operator })
     hi('Statement', { fg = colors.statement, bold = true })
     hi('Title', { fg = colors.literal })
@@ -183,8 +183,8 @@ local function set_lsp(colors)
     hi('@lsp.typemod.keyword.documentation', '@keyword')
     hi('@lsp.typemod.parameter.documentation', 'Normal')
 
-    hi('LspCodeLens', 'Ignore')
-    hi('LspCodeLensSeparator', 'LspCodeLens')
+    hi('LspCodeLens', { fg = colors.lens, italic = true })
+    hi('LspCodeLensSeparator', { fg = colors.lens })
     hi('LspReferenceText', 'DiffChange')
     hi('LspReferenceRead', 'DiffAdd')
     hi('LspReferenceWrite', 'DiffDelete')
@@ -326,7 +326,7 @@ local function set_gui(colors)
 end
 
 local function create_mutability_autocommand(pattern, ...)
-    local types = {...}
+    local types = { ... }
 
     vim.api.nvim_create_autocmd('LspTokenUpdate', {
         group = 'LspTokenUpdateForMutability',

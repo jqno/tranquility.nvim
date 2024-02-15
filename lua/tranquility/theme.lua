@@ -37,7 +37,7 @@ local themes = {
             operator = 'orange',
             comment = 'bright_green',
             link = 'bright_blue',
-            conceal = 'dim_0',
+            conceal = 'bg_2',
             highlighted_background = 'bg_2',
 
             -- UI elements
@@ -46,6 +46,7 @@ local themes = {
             ui_background = 'bg_2',
             visual = 'bg_2',
             cursor = 'fg_1',
+            lens = 'blue',
             ui_text = 'fg_1',
             ui_dim_text = 'dim_0',
             ui_widget = 'green',
@@ -92,7 +93,7 @@ local themes = {
             operator = 'frost_0',
             comment = 'aurora_3',
             link = 'frost_0',
-            conceal = 'frost_3',
+            conceal = 'polar_night_3',
             highlighted_background = 'polar_night_2',
 
             -- UI elements
@@ -101,6 +102,7 @@ local themes = {
             ui_background = 'polar_night_2',
             visual = 'polar_night_2',
             cursor = 'snow_storm_2',
+            lens = 'aurora_1',
             ui_text = 'snow_storm_2',
             ui_dim_text = 'polar_night_3',
             ui_widget = 'aurora_3',
@@ -157,7 +159,7 @@ local themes = {
             operator = 'peach',
             comment = 'green',
             link = 'blue',
-            conceal = 'overlay2',
+            conceal = 'overlay1',
             highlighted_background = 'surface2',
 
             -- UI elements
@@ -166,6 +168,7 @@ local themes = {
             ui_background = 'surface2',
             visual = 'surface2',
             cursor = 'rosewater',
+            lens = 'pink',
             ui_text = 'rosewater',
             ui_dim_text = 'subtext0',
             ui_widget = 'blue',
@@ -220,6 +223,7 @@ local themes = {
             ui_background = 'bg_injected_lang',
             visual = 'bg_injected_lang',
             cursor = 'text',
+            lens = 'button',
             ui_text = 'text',
             ui_dim_text = 'fg_inline_hint',
             ui_widget = 'button',
