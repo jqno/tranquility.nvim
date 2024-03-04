@@ -94,7 +94,7 @@ local function set_treesitter(colors)
     hi('@type', 'Type')
     hi('@variable', 'Identifier')
 
-    hi('@annotation', '@variable')
+    hi('@annotation', { fg = colors.type, italic = true })
     hi('@attribute', '@annotation')
     hi('@boolean', 'Constant')
     hi('@character', 'Constant')
