@@ -238,12 +238,6 @@ local function set_filetype_markdown(colors)
     hi('markdownCode', 'Keyword')
 end
 
-local function set_filetype_scala()
-    -- disable some LSP highlights, because Treesitter's are better
-    hi('@lsp.type.method.scala', {})
-    hi('@lsp.type.keyword.scala', {})
-end
-
 local function set_filetype_xml()
     hi('@tag.xml', '@keyword')
     hi('xmlAttrib', '@tag.attribute')
@@ -370,7 +364,6 @@ local function set_highlights(colors)
     set_filetype_html()
     set_filetype_lua()
     set_filetype_markdown(colors)
-    set_filetype_scala()
     set_filetype_xml()
 
     set_gui(colors)
