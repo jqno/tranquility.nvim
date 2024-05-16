@@ -245,6 +245,7 @@ local function set_filetype_scala()
 end
 
 local function set_filetype_xml()
+    hi('@tag.xml', '@keyword')
     hi('xmlAttrib', '@tag.attribute')
     hi('xmlAttribPunct', '@tag.delimiter')
     hi('xmlEqual', '@tag.delimiter')
