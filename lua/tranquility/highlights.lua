@@ -283,7 +283,7 @@ local function set_gui(colors)
     hi('Cursor', { bg = colors.cursor })
     hi('CursorIM', 'Cursor')
     hi('lCursor', 'Cursor')
-    hi('LineNr', { fg = colors.conceal })
+    hi('LineNr', { fg = colors.ui_dim_text })
     hi('CursorLineNr', { fg = colors.ui_widget })
     hi('SignColumn', { fg = mod.none })
 
