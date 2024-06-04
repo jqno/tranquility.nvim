@@ -287,7 +287,7 @@ local function set_gui(colors)
     hi('SignColumn', { fg = mod.none })
 
     -- visual
-    hi('Visual', { bg = colors.visual, bold = true })
+    hi('Visual', { fg = colors.identifier, bg = colors.visual, bold = true })
     hi('VisualNOS', 'Visual')
 
     -- Pmenu
