@@ -230,6 +230,7 @@ end
 local function set_filetype_lua()
     hi('luaFunction', 'Keyword')
     hi('luaFunctionBlock', 'Function')
+    hi('@keyword.operator.lua', 'Keyword')
 end
 
 local function set_filetype_markdown(colors)
