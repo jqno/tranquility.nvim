@@ -79,6 +79,10 @@ local function set_nvimtree()
     hi('NvimTreeRootFolder', 'Comment')
 end
 
+local function set_render_markdown(colors)
+    hi('RenderMarkdownCode', { bg = colors.highlighted_background })
+end
+
 local function set_telescope(colors)
     hi('TelescopeBorder', { fg = colors.ui_widget })
     hi('TelescopeSelection', { bg = colors.visual })
@@ -361,6 +365,7 @@ local function set_highlights(colors)
     set_gitsigns(colors)
     set_neovim(colors)
     set_nvimtree()
+    set_render_markdown(colors)
     set_telescope(colors)
     set_treesitter(colors)
     set_lsp(colors)
