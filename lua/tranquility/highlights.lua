@@ -337,6 +337,9 @@ local function create_mutability_autocommand(pattern, ...)
         group = 'LspTokenUpdateForMutability',
         pattern = { pattern },
         callback = function(args)
+            if not vim.diagnostic.config().underline then
+                return
+            end
             local token = args.data.token
             for _, type in ipairs(types) do
                 if token.type == type and not token.modifiers.readonly then
