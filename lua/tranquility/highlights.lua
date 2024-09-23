@@ -231,6 +231,10 @@ local function set_filetype_html()
     hi('htmlTSStrong', '@markup.strong')
 end
 
+local function set_filetype_java()
+    hi('@function.builtin.java', '@keyword')
+end
+
 local function set_filetype_lua()
     hi('luaFunction', 'Keyword')
     hi('luaFunctionBlock', 'Function')
@@ -375,6 +379,7 @@ local function set_highlights(colors)
 
     set_filetype_gitcommit()
     set_filetype_html()
+    set_filetype_java()
     set_filetype_lua()
     set_filetype_markdown(colors)
     set_filetype_xml()
