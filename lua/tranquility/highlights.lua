@@ -1,5 +1,5 @@
 local util = require('tranquility.util')
-local mod = util.mod
+local none = util.none
 local hi = util.hi
 
 local function set_native_syntax(colors)
@@ -293,7 +293,7 @@ local function set_gui(colors)
     hi('lCursor', 'Cursor')
     hi('LineNr', { fg = colors.ui_dim_text })
     hi('CursorLineNr', { fg = colors.ui_widget })
-    hi('SignColumn', { fg = mod.none })
+    hi('SignColumn', { fg = none })
 
     -- visual
     hi('Visual', { fg = colors.identifier, bg = colors.visual, bold = true })

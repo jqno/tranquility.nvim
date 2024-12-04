@@ -251,7 +251,7 @@ local function define_colors(theme_name)
     end
 
     if theme.transparent_background then
-        colors.background = util.mod.none
+        colors.background = util.none
     end
 
     colors.theme_name = theme.name
