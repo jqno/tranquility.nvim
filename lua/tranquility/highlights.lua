@@ -237,6 +237,7 @@ end
 
 local function set_filetype_java()
     hi('@function.builtin.java', '@keyword')
+    hi('@type.builtin.java', '@keyword')
 end
 
 local function set_filetype_lua()
