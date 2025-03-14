@@ -59,6 +59,11 @@ local function set_cmp(colors)
     hi('CmpItemKind', { fg = colors.ui_extra_highlight })
 end
 
+local function set_copilot(colors)
+    hi('CopilotSuggestion', { fg = colors.lens })
+    hi('CopilotAnnotation', { bg = colors.lens, fg = colors.bg })
+end
+
 local function set_floaterm()
     hi('FloatermBorder', 'FloatBorder')
 end
@@ -373,6 +378,7 @@ local function set_highlights(colors)
     set_visual_elements(colors)
 
     set_cmp(colors)
+    set_copilot(colors)
     set_floaterm()
     set_gitsigns(colors)
     set_neovim(colors)
