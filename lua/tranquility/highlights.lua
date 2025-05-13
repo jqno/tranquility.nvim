@@ -64,10 +64,6 @@ local function set_copilot(colors)
     hi('CopilotAnnotation', { bg = colors.lens, fg = colors.bg })
 end
 
-local function set_floaterm()
-    hi('FloatermBorder', 'FloatBorder')
-end
-
 local function set_gitsigns(colors)
     hi('GitSignsAdd', { fg = colors.added })
     hi('GitSignsChange', { fg = colors.changed })
@@ -379,7 +375,6 @@ local function set_highlights(colors)
 
     set_cmp(colors)
     set_copilot(colors)
-    set_floaterm()
     set_gitsigns(colors)
     set_neovim(colors)
     set_nvimtree()
