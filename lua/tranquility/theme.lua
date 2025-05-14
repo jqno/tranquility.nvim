@@ -37,7 +37,7 @@ local themes = {
             operator = 'orange',
             comment = 'bright_green',
             link = 'bright_blue',
-            conceal = 'bg_2',
+            conceal = 'blue',
             highlighted_background = 'bg_2',
 
             -- UI elements
@@ -46,7 +46,7 @@ local themes = {
             ui_background = 'bg_2',
             visual = 'dim_0',
             cursor = 'fg_1',
-            lens = 'blue',
+            lens = 'bright_blue',
             ui_text = 'fg_1',
             ui_dim_text = 'dim_0',
             ui_widget = 'green',

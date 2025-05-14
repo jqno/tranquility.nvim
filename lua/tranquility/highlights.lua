@@ -45,7 +45,7 @@ end
 
 local function set_visual_elements(colors)
     hi('Terminal', 'Normal')
-    hi('NonText', 'Ignore')
+    hi('NonText', { fg = colors.ui_dim_text })
     hi('EndOfBuffer', 'Ignore')
     hi('Conceal', 'Ignore')
     hi('NormalFloat', { bg = colors.ui_dim_background })
