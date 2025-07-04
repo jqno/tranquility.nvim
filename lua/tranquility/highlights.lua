@@ -64,6 +64,15 @@ local function set_copilot(colors)
     hi('CopilotAnnotation', { bg = colors.lens, fg = colors.bg })
 end
 
+local function set_dap_ui()
+    hi('DapUIScope', 'PmenuSel')
+    hi('DapUIDecoration', 'Comment')
+    hi('DapUIVariable', 'Identifier')
+    hi('DapUIType', 'Type')
+    hi('DapUIValue', 'Constant')
+    hi('DapUIStoppedThread', 'PmenuSel')
+end
+
 local function set_gitsigns(colors)
     hi('GitSignsAdd', { fg = colors.added })
     hi('GitSignsChange', { fg = colors.changed })
@@ -375,6 +384,7 @@ local function set_highlights(colors)
 
     set_cmp(colors)
     set_copilot(colors)
+    set_dap_ui()
     set_gitsigns(colors)
     set_neovim(colors)
     set_nvimtree()
