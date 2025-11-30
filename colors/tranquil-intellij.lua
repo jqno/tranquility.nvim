@@ -1,1 +1,0 @@
-require('tranquility').setup('intellij')
