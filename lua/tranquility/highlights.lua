@@ -75,9 +75,9 @@ local function set_dap_ui()
 end
 
 local function set_gitsigns(colors)
-    hi('GitSignsAdd', { fg = colors.added })
-    hi('GitSignsChange', { fg = colors.changed })
-    hi('GitSignsDelete', { fg = colors.deleted })
+    hi('GitSignsAdd', colors.added)
+    hi('GitSignsChange', colors.changed)
+    hi('GitSignsDelete', colors.deleted)
 end
 
 local function set_neovim(colors)
@@ -337,9 +337,9 @@ local function set_gui(colors)
     hi('SpellRare', 'SpellBad')
 
     -- diff
-    hi('DiffAdd', { fg = colors.highlighted_background, bg = colors.added })
-    hi('DiffChange', { fg = colors.highlighted_background, bg = colors.changed })
-    hi('DiffDelete', { fg = colors.highlighted_background, bg = colors.deleted })
+    hi('DiffAdd', colors.added_badge)
+    hi('DiffChange', colors.changed_badge)
+    hi('DiffDelete', colors.deleted_badge)
     hi('DiffText', 'Normal')
     hi('diffAdded', 'DiffAdd')
     hi('diffChanged', 'DiffChange')

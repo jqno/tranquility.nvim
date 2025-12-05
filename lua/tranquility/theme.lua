@@ -98,9 +98,12 @@ local themes = {
         info_badge = { fg = s.cyan, bg = s.bg_cyan },
         hint = { fg = s.fg_1 },
         hint_badge = { fg = s.fg_1, bg = s.bg_2 },
-        added = s.green,
-        changed = s.yellow,
-        deleted = s.red
+        added = { fg = s.green },
+        added_badge = { fg = s.green, bg = s.bg_green },
+        changed = { fg = s.yellow },
+        changed_badge = { fg = s.yellow, bg = s.bg_yellow },
+        deleted = { fg = s.red },
+        deleted_badge = { fg = s.red, bg = s.bg_red }
     },
     nord = {
         name = 'Tranquil Nord',
@@ -138,9 +141,12 @@ local themes = {
         info_badge = { fg = n.frost_2, bg = n.bg_frost_2 },
         hint = { fg = n.snow_storm_2 },
         hint_badge = { fg = n.snow_storm_2, bg = n.polar_night_3 },
-        added = n.aurora_3,
-        changed = n.aurora_2,
-        deleted = n.aurora_0
+        added = { fg = n.aurora_3 },
+        added_badge = { fg = n.aurora_3, bg = n.bg_aurora_3 },
+        changed = { fg = n.aurora_2 },
+        changed_badge = { fg = n.aurora_2, bg = n.bg_aurora_2 },
+        deleted = { fg = n.aurora_0 },
+        deleted_badge = { fg = n.aurora_0, bg = n.bg_aurora_0 }
     }
 }
 
