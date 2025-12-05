@@ -66,7 +66,7 @@ local themes = {
         name = 'Tranquility',
 
         -- Syntax elements
-        identifier = s.fg_1,
+        normal = { fg = s.fg_1, bg = util.none },
         statement = s.dim_0,
         literal = s.yellow,
         type = s.fg_0,
@@ -102,7 +102,7 @@ local themes = {
         name = 'Tranquil Nord',
 
         -- Syntax elements
-        identifier = n.snow_storm_2,
+        normal = { fg = n.snow_storm_2, bg = n.polar_night_0 },
         statement = n.frost_3,
         literal = n.aurora_2,
         type = n.snow_storm_0,
