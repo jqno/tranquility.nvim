@@ -9,7 +9,7 @@ function This.get(theme)
             c = { bg = colors.ui_background, fg = colors.normal.fg },
         },
         insert = {
-            a = { bg = colors.literal, fg = colors.ui_dim_background, gui = 'bold' },
+            a = { bg = colors.literal.fg, fg = colors.ui_dim_background, gui = 'bold' },
             b = { bg = colors.normal.fg, fg = colors.ui_dim_background },
             c = { bg = colors.ui_background, fg = colors.normal.fg },
         },
@@ -19,7 +19,7 @@ function This.get(theme)
             c = { bg = colors.ui_background, fg = colors.normal.fg },
         },
         replace = {
-            a = { bg = colors.operator, fg = colors.ui_dim_background, gui = 'bold' },
+            a = { bg = colors.operator.fg, fg = colors.ui_dim_background, gui = 'bold' },
             b = { bg = colors.normal.fg, fg = colors.ui_dim_background },
             c = { bg = colors.ui_background, fg = colors.normal.fg },
         },

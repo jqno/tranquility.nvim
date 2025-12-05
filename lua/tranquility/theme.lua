@@ -67,13 +67,13 @@ local themes = {
 
         -- Syntax elements
         normal = { fg = s.fg_1, bg = util.none },
-        statement = s.dim_0,
-        literal = s.yellow,
-        type = s.fg_0,
-        operator = s.orange,
-        comment = s.green,
-        link = s.blue,
-        conceal = s.dim_0,
+        statement = { fg = s.dim_0, bold = true },
+        literal = { fg = s.yellow },
+        type = { fg = s.fg_0 },
+        operator = { fg = s.orange },
+        comment = { fg = s.green },
+        link = { fg = s.blue },
+        conceal = { fg = s.dim_0 },
         highlighted_background = s.bg_2,
 
         -- UI elements
@@ -103,13 +103,13 @@ local themes = {
 
         -- Syntax elements
         normal = { fg = n.snow_storm_2, bg = n.polar_night_0 },
-        statement = n.frost_3,
-        literal = n.aurora_2,
-        type = n.snow_storm_0,
-        operator = n.frost_0,
-        comment = n.aurora_3,
-        link = n.frost_1,
-        conceal = n.polar_night_3,
+        statement = { fg = n.frost_3 },
+        literal = { fg = n.aurora_2 },
+        type = { fg = n.snow_storm_0 },
+        operator = { fg = n.frost_0 },
+        comment = { fg = n.aurora_3 },
+        link = { fg = n.frost_1 },
+        conceal = { fg = n.polar_night_3 },
         highlighted_background = n.polar_night_2,
 
         -- UI elements
