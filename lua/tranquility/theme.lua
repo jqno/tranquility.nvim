@@ -90,10 +90,14 @@ local themes = {
         ui_extra_highlight = s.cyan,
 
         -- Status elements
-        error = s.red,
-        warning = s.magenta,
-        info = s.cyan,
-        hint = s.fg_1,
+        error = { fg = s.red },
+        error_badge = { fg = s.red, bg = s.bg_red },
+        warning = { fg = s.magenta },
+        warning_badge = { fg = s.magenta, bg = s.bg_magenta },
+        info = { fg = s.cyan },
+        info_badge = { fg = s.cyan, bg = s.bg_cyan },
+        hint = { fg = s.fg_1 },
+        hint_badge = { fg = s.fg_1, bg = s.bg_2 },
         added = s.green,
         changed = s.yellow,
         deleted = s.red
@@ -126,10 +130,14 @@ local themes = {
         ui_extra_highlight = n.frost_2,
 
         -- Status elements
-        error = n.aurora_0,
-        warning = n.aurora_4,
-        info = n.frost_2,
-        hint = n.snow_storm_2,
+        error = { fg = n.aurora_0 },
+        error_badge = { fg = n.aurora_0, bg = n.bg_aurora_0 },
+        warning = { fg = n.aurora_4 },
+        warning_badge = { fg = n.aurora_4, bg = n.bg_aurora_4 },
+        info = { fg = n.frost_2 },
+        info_badge = { fg = n.frost_2, bg = n.bg_frost_2 },
+        hint = { fg = n.snow_storm_2 },
+        hint_badge = { fg = n.snow_storm_2, bg = n.polar_night_3 },
         added = n.aurora_3,
         changed = n.aurora_2,
         deleted = n.aurora_0

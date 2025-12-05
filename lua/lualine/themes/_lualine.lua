@@ -24,7 +24,7 @@ function This.get(theme)
             c = { bg = colors.ui_background, fg = colors.normal.fg },
         },
         command = {
-            a = { bg = colors.warning, fg = colors.ui_dim_background, gui = 'bold' },
+            a = { bg = colors.warning.fg, fg = colors.ui_dim_background, gui = 'bold' },
             b = { bg = colors.normal.fg, fg = colors.ui_dim_background },
             c = { bg = colors.ui_background, fg = colors.normal.fg },
         },
