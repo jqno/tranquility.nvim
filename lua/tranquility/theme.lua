@@ -69,11 +69,14 @@ local themes = {
         normal = { fg = s.fg_1, bg = util.none },
         statement = { fg = s.dim_0, bold = true },
         literal = { fg = s.yellow },
+        literal_badge = { fg = s.yellow, bg = s.bg_yellow },
         type = { fg = s.fg_0 },
         operator = { fg = s.orange },
         comment = { fg = s.green },
         link = { fg = s.blue },
         conceal = { fg = s.dim_0 },
+        raw = { fg = s.fg_1, bg = s.bg_2 },
+        lens = { fg = s.blue, bg = s.bg_blue },
         highlighted_background = s.bg_2,
 
         -- UI elements
@@ -82,7 +85,6 @@ local themes = {
         ui_background = s.bg_2,
         visual = s.blue,
         cursor = s.fg_1,
-        lens = s.blue,
         ui_text = s.fg_1,
         ui_dim_text = s.dim_0,
         ui_widget = s.green,
@@ -90,6 +92,8 @@ local themes = {
         ui_extra_highlight = s.cyan,
 
         -- Status elements
+        ok = { fg = s.green },
+        ok_badge = { fg = s.green, bg = s.bg_green },
         error = { fg = s.red },
         error_badge = { fg = s.red, bg = s.bg_red },
         warning = { fg = s.magenta },
@@ -112,11 +116,14 @@ local themes = {
         normal = { fg = n.snow_storm_2, bg = n.polar_night_0 },
         statement = { fg = n.frost_3 },
         literal = { fg = n.aurora_2 },
+        literal_badge = { fg = n.aurora_2, bg = n.bg_aurora_2 },
         type = { fg = n.snow_storm_0 },
         operator = { fg = n.frost_0 },
         comment = { fg = n.aurora_3 },
         link = { fg = n.frost_1 },
         conceal = { fg = n.polar_night_3 },
+        raw = { fg = s.snow_storm_2, bg = s.polar_night_3 },
+        lens = { fg = n.frost_1, bg = n.bg_frost_1 },
         highlighted_background = n.polar_night_2,
 
         -- UI elements
@@ -125,7 +132,6 @@ local themes = {
         ui_background = n.polar_night_2,
         visual = n.frost_1,
         cursor = n.snow_storm_2,
-        lens = n.frost_1,
         ui_text = n.snow_storm_2,
         ui_dim_text = n.polar_night_3,
         ui_widget = n.aurora_3,
@@ -133,6 +139,8 @@ local themes = {
         ui_extra_highlight = n.frost_2,
 
         -- Status elements
+        ok = { fg = n.aurora_3 },
+        ok_badge = { fg = n.aurora_3, bg = n.bg_aurora_3 },
         error = { fg = n.aurora_0 },
         error_badge = { fg = n.aurora_0, bg = n.bg_aurora_0 },
         warning = { fg = n.aurora_4 },
