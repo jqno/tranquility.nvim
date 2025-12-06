@@ -156,7 +156,7 @@ local function set_treesitter(colors)
     hi('@markup.link.label', '@markup.link')
     hi('@markup.link.url', '@markup.link')
     hi('@markup.math', '@markup.raw')
-    hi('@markup.raw', colors.raw)
+    hi('@markup.raw', colors.raw_badge)
     hi('@markup.underline', 'Underlined')
 
     hi('@diff.plus', 'DiffAdd')
@@ -297,7 +297,7 @@ local function set_gui(colors)
     hi('SignColumn', { fg = none })
 
     -- visual
-    hi('Visual', { fg = colors.normal.fg, bg = colors.visual })
+    hi('Visual', colors.visual_badge)
     hi('VisualNOS', 'Visual')
 
     -- Pmenu

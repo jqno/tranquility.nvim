@@ -75,15 +75,16 @@ local themes = {
         comment = { fg = s.green },
         link = { fg = s.blue },
         conceal = { fg = s.dim_0 },
-        raw = { fg = s.fg_1, bg = s.bg_2 },
+        raw_badge = { fg = s.fg_1, bg = s.bg_2 },
         lens = { fg = s.blue, bg = s.bg_blue },
+        visual = { fg = s.blue },
+        visual_badge = { bg = s.bg_blue }, -- Note: no fg
         highlighted_background = s.bg_2,
 
         -- UI elements
         background = util.none, -- Transparent background
         ui_dim_background = s.bg_1,
         ui_background = s.bg_2,
-        visual = s.blue,
         cursor = s.fg_1,
         ui_text = s.fg_1,
         ui_dim_text = s.dim_0,
@@ -122,15 +123,16 @@ local themes = {
         comment = { fg = n.aurora_3 },
         link = { fg = n.frost_1 },
         conceal = { fg = n.polar_night_3 },
-        raw = { fg = s.snow_storm_2, bg = s.polar_night_3 },
+        raw_badge = { fg = s.snow_storm_2, bg = s.polar_night_3 },
         lens = { fg = n.frost_1, bg = n.bg_frost_1 },
+        visual = { fg = n.frost_1 },
+        visual_badge = { bg = n.bg_frost_1 }, -- Note: no fg
         highlighted_background = n.polar_night_2,
 
         -- UI elements
         background = n.polar_night_0,
         ui_dim_background = n.polar_night_1,
         ui_background = n.polar_night_2,
-        visual = n.frost_1,
         cursor = n.snow_storm_2,
         ui_text = n.snow_storm_2,
         ui_dim_text = n.polar_night_3,
