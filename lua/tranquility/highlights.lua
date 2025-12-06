@@ -60,11 +60,6 @@ local function set_cmp(colors)
     hi('CmpItemKind', { fg = colors.ui_extra_highlight })
 end
 
-local function set_copilot(colors)
-    hi('CopilotSuggestion', { fg = colors.lens })
-    hi('CopilotAnnotation', { bg = colors.lens, fg = colors.bg })
-end
-
 local function set_dap_ui()
     hi('DapUIScope', 'PmenuSel')
     hi('DapUIDecoration', 'Comment')
@@ -88,16 +83,6 @@ end
 
 local function set_nvimtree()
     hi('NvimTreeRootFolder', 'Comment')
-end
-
-local function set_render_markdown(colors)
-    hi('RenderMarkdownCode', { bg = colors.highlighted_background })
-end
-
-local function set_telescope(colors)
-    hi('TelescopeBorder', { fg = colors.ui_widget })
-    hi('TelescopeSelection', { bg = colors.visual })
-    hi('TelescopeMatching', { fg = colors.ui_highlight })
 end
 
 local function set_treesitter(colors)
@@ -384,13 +369,10 @@ local function set_highlights(colors)
     set_visual_elements(colors)
 
     set_cmp(colors)
-    set_copilot(colors)
     set_dap_ui()
     set_gitsigns(colors)
     set_neovim(colors)
     set_nvimtree()
-    set_render_markdown(colors)
-    set_telescope(colors)
     set_treesitter(colors)
     set_lsp(colors)
 
