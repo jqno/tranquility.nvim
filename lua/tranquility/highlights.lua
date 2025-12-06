@@ -212,7 +212,7 @@ local function set_lsp(colors)
     hi('DiagnosticVirtualTextWarn', 'DiagnosticSignWarn')
     hi('DiagnosticVirtualTextInfo', 'DiagnosticSignInfo')
     hi('DiagnosticVirtualTextHint', 'DiagnosticSignHint')
-    hi('DiagnosticUnnecessary', merge(colors.conceal, { underline = true, special = colors.warning.fg }))
+    hi('DiagnosticUnnecessary', colors.unnecessary_badge)
 
     -- needed to properly display treesitter TODO comment highlights; see https://www.reddit.com/r/neovim/comments/14ecf5o/semantic_highlights_messing_with_todo_comments/
     hi('@lsp.type.comment', {})
