@@ -79,7 +79,6 @@ local themes = {
         lens = { fg = s.blue, bg = s.bg_blue },
         visual = { fg = s.blue },
         visual_badge = { bg = s.bg_blue }, -- Note: no fg
-        highlighted_background = s.bg_2,
 
         -- UI elements
         background = util.none, -- Transparent background
@@ -132,7 +131,6 @@ local themes = {
         lens = { fg = n.frost_1, bg = n.bg_frost_1 },
         visual = { fg = n.frost_1 },
         visual_badge = { bg = n.bg_frost_1 }, -- Note: no fg
-        highlighted_background = n.polar_night_2,
 
         -- UI elements
         background = n.polar_night_0,
