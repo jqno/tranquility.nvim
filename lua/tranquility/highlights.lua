@@ -2,6 +2,7 @@ local util = require('tranquility.util')
 local none = util.none
 local hi = util.hi
 local merge = util.merge
+local invert = util.invert
 
 local function set_native_syntax(colors)
     hi('Normal', colors.normal)
@@ -46,18 +47,18 @@ end
 
 local function set_visual_elements(colors)
     hi('Terminal', 'Normal')
-    hi('NonText', { fg = colors.ui_dim_text })
+    hi('NonText', 'Ignore')
     hi('EndOfBuffer', 'Ignore')
     hi('Conceal', 'Ignore')
-    hi('NormalFloat', { bg = colors.ui_dim_background })
-    hi('FloatBorder', { fg = colors.ui_widget, bg = colors.ui_dim_background })
+    hi('NormalFloat', colors.float)
+    hi('FloatBorder', merge(colors.float, colors.border))
 end
 
 local function set_cmp(colors)
-    hi('CmpItemAbbrMatch', { fg = colors.ui_highlight })
-    hi('CmpItemAbbrMatchFuzzy', { fg = colors.ui_highlight })
-    hi('CmpItemAbbrDeprecated', util.merge(colors.normal, { strikethrough = true }))
-    hi('CmpItemKind', { fg = colors.ui_extra_highlight })
+    hi('CmpItemAbbrMatch', colors.highlight)
+    hi('CmpItemAbbrMatchFuzzy', colors.highlight)
+    hi('CmpItemAbbrDeprecated', merge(colors.normal, { strikethrough = true }))
+    hi('CmpItemKind', colors.highlight)
 end
 
 local function set_dap_ui()
@@ -264,8 +265,8 @@ local function set_gui(colors)
     -- messages
     hi('ErrorMsg', colors.error)
     hi('WarningMsg', colors.warning)
-    hi('MsgArea', { fg = colors.ui_text })
-    hi('ModeMsg', { fg = colors.ui_highlight })
+    hi('MsgArea', colors.normal)
+    hi('ModeMsg', colors.highlight)
     hi('MoreMsg', 'ModeMsg')
     hi('Question', 'ModeMsg')
 
@@ -282,19 +283,17 @@ local function set_gui(colors)
     hi('WildMenu', { fg = colors.ui_widget, bg = colors.ui_text })
     hi('WinBar', 'StatusLine')
     hi('WinBarNC', 'StatusLineNC')
-    hi('VertSplit', { fg = colors.ui_background, bg = colors.ui_background })
-    hi('WinSeparator', { fg = colors.ui_widget })
+    hi('WinSeparator', colors.border)
 
     -- cursor
-    hi('ColorColumn', { bg = colors.ui_extra_highlight })
-    hi('CursorColumn', { bg = colors.ui_background })
+    hi('ColorColumn', colors.visual_badge)
+    hi('CursorColumn', colors.visual_badge)
     hi('CursorLine', 'CursorColumn')
-    hi('Cursor', { bg = colors.cursor })
+    hi('Cursor', invert(colors.normal))
     hi('CursorIM', 'Cursor')
     hi('lCursor', 'Cursor')
-    hi('LineNr', { fg = colors.ui_dim_text })
-    hi('CursorLineNr', { fg = colors.ui_widget })
-    hi('SignColumn', { fg = none })
+    hi('LineNr', 'Ignore')
+    hi('CursorLineNr', colors.border)
 
     -- visual
     hi('Visual', colors.visual_badge)
@@ -307,8 +306,8 @@ local function set_gui(colors)
     hi('PmenuThumb', { bg = colors.ui_widget })
 
     -- folds
-    hi('FoldColumn', { fg = colors.ui_dim_text })
-    hi('Folded', { fg = colors.ui_dim_text })
+    hi('FoldColumn', colors.lens)
+    hi('Folded', colors.lens)
 
     -- search
     hi('Search', colors.highlight)
@@ -333,7 +332,7 @@ local function set_gui(colors)
     hi('diffLine', 'DiffText')
 
     -- other
-    hi('Directory', { fg = colors.ui_highlight })
+    hi('Directory', colors.directory)
 end
 
 local function create_mutability_autocommand(pattern, ...)
@@ -357,7 +356,7 @@ local function create_mutability_autocommand(pattern, ...)
 end
 
 local function set_lsp_mutability_markers(colors)
-    hi('Mutable', { underline = true, special = colors.highlight_color })
+    hi('Mutable', colors.mutability)
     vim.api.nvim_create_augroup('LspTokenUpdateForMutability', { clear = true })
 
     create_mutability_autocommand('*.java', 'property')

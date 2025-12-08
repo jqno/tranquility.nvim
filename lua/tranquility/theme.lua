@@ -90,6 +90,9 @@ local themes = {
         ui_widget = s.green,
         ui_highlight = s.violet,
         ui_extra_highlight = s.cyan,
+        border = { fg = s.green },
+        float = { bg = s.bg_1 },
+        directory = { fg = s.violet },
 
         -- Status elements
         ok = { fg = s.green },
@@ -113,7 +116,8 @@ local themes = {
 
         highlight_color = s.cyan,
         highlight = { fg = s.cyan, bg = s.bg_cyan },
-        highlight_plus = { fg = s.bg_2, bg = s.cyan }
+        highlight_plus = { fg = s.bg_2, bg = s.cyan },
+        mutability = { underline = true, special = s.cyan }
     },
     nord = {
         name = 'Tranquil Nord',
@@ -143,6 +147,9 @@ local themes = {
         ui_widget = n.aurora_3,
         ui_highlight = n.aurora_4,
         ui_extra_highlight = n.frost_2,
+        border = { fg = n.aurora_3 },
+        float = { bg = n.polar_night_1 },
+        directory = { fg = n.aurora_4 },
 
         -- Status elements
         ok = { fg = n.aurora_3 },
@@ -166,7 +173,8 @@ local themes = {
 
         highlight_color = n.frost_2,
         highlight = { fg = n.bg_frost_2, bg = n.frost_2 },
-        highlight_plus = { fg = n.snow_storm_2, bg = n.frost_2 }
+        highlight_plus = { fg = n.snow_storm_2, bg = n.frost_2 },
+        mutability = { underline = true, special = s.frost_2 }
     }
 }
 
