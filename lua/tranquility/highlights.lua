@@ -187,9 +187,9 @@ local function set_lsp(colors)
 
     hi('LspCodeLens', colors.lens)
     hi('LspCodeLensSeparator', colors.lens)
-    hi('LspReferenceText', 'DiffChange')
-    hi('LspReferenceRead', 'DiffAdd')
-    hi('LspReferenceWrite', 'DiffDelete')
+    hi('LspReferenceText', colors.reference)
+    hi('LspReferenceRead', colors.reference)
+    hi('LspReferenceWrite', colors.reference_write)
     hi('LspInlayHint', 'LspCodeLens')
 
     hi('DiagnosticError', colors.error)

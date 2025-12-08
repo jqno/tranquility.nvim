@@ -100,6 +100,7 @@ local themes = {
         warning = { fg = s.magenta },
         warning_badge = { fg = s.magenta, bg = s.bg_magenta },
         unnecessary_badge = { fg = s.dim_0, bg = s.bg_2 },
+
         info = { fg = s.cyan },
         info_badge = { fg = s.cyan, bg = s.bg_cyan },
         hint = { fg = s.fg_1 },
@@ -109,7 +110,10 @@ local themes = {
         changed = { fg = s.yellow },
         changed_badge = { fg = s.yellow, bg = s.bg_yellow },
         deleted = { fg = s.red },
-        deleted_badge = { fg = s.red, bg = s.bg_red }
+        deleted_badge = { fg = s.red, bg = s.bg_red },
+
+        reference = { fg = s.green, bg = s.bg_green },
+        reference_write = { fg = s.orange, bg = s.bg_orange }
     },
     nord = {
         name = 'Tranquil Nord',
@@ -149,6 +153,7 @@ local themes = {
         warning = { fg = n.aurora_4 },
         warning_badge = { fg = n.aurora_4, bg = n.bg_aurora_4 },
         unnecessary_badge = { fg = s.polar_night_3, bg = s.polar_night_3 },
+
         info = { fg = n.frost_2 },
         info_badge = { fg = n.frost_2, bg = n.bg_frost_2 },
         hint = { fg = n.snow_storm_2 },
@@ -158,7 +163,10 @@ local themes = {
         changed = { fg = n.aurora_2 },
         changed_badge = { fg = n.aurora_2, bg = n.bg_aurora_2 },
         deleted = { fg = n.aurora_0 },
-        deleted_badge = { fg = n.aurora_0, bg = n.bg_aurora_0 }
+        deleted_badge = { fg = n.aurora_0, bg = n.bg_aurora_0 },
+
+        reference = { fg = n.aurora_3, bg = n.bg_aurora_3 },
+        reference_write = { fg = n.aurora_1, bg = n.bg_aurora_1 }
     }
 }
 
