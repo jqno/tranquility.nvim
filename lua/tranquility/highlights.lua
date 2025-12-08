@@ -187,9 +187,9 @@ local function set_lsp(colors)
 
     hi('LspCodeLens', colors.lens)
     hi('LspCodeLensSeparator', colors.lens)
-    hi('LspReferenceText', colors.reference)
-    hi('LspReferenceRead', colors.reference)
-    hi('LspReferenceWrite', colors.reference_write)
+    hi('LspReferenceText', colors.highlight)
+    hi('LspReferenceRead', colors.highlight)
+    hi('LspReferenceWrite', colors.highlight_plus)
     hi('LspInlayHint', 'LspCodeLens')
 
     hi('DiagnosticError', colors.error)
@@ -311,9 +311,10 @@ local function set_gui(colors)
     hi('Folded', { fg = colors.ui_dim_text })
 
     -- search
-    hi('IncSearch', { fg = colors.highlighted_background, bg = colors.ui_extra_highlight })
-    hi('Search', { fg = colors.highlighted_background, bg = colors.ui_highlight })
-    hi('MatchParen', { fg = colors.operator.fg, bg = colors.highlighted_background })
+    hi('Search', colors.highlight)
+    hi('CurSearch', colors.highlight_plus)
+    hi('IncSearch', 'CurSearch')
+    hi('MatchParen', 'Search')
 
     -- diagnostics
     hi('SpellBad', colors.warning)
