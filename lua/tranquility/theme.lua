@@ -111,6 +111,7 @@ local themes = {
         deleted = { fg = s.red },
         deleted_badge = { fg = s.red, bg = s.bg_red },
 
+        highlight_color = s.cyan,
         highlight = { fg = s.cyan, bg = s.bg_cyan },
         highlight_plus = { fg = s.bg_2, bg = s.cyan }
     },
@@ -163,8 +164,9 @@ local themes = {
         deleted = { fg = n.aurora_0 },
         deleted_badge = { fg = n.aurora_0, bg = n.bg_aurora_0 },
 
-        highlight = { fg = n.frost_2, bg = n.bg_frost_2 },
-        highlight_plus = { fg = n.polar_night_2, bg = n.frost_2 }
+        highlight_color = n.frost_2,
+        highlight = { fg = n.bg_frost_2, bg = n.frost_2 },
+        highlight_plus = { fg = n.snow_storm_2, bg = n.frost_2 }
     }
 }
 

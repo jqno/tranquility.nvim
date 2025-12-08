@@ -357,7 +357,7 @@ local function create_mutability_autocommand(pattern, ...)
 end
 
 local function set_lsp_mutability_markers(colors)
-    hi('Mutable', { underline = true, special = colors.highlight.fg })
+    hi('Mutable', { underline = true, special = colors.highlight_color })
     vim.api.nvim_create_augroup('LspTokenUpdateForMutability', { clear = true })
 
     create_mutability_autocommand('*.java', 'property')
