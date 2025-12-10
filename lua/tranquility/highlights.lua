@@ -51,14 +51,18 @@ local function set_visual_elements(colors)
     hi('EndOfBuffer', 'Ignore')
     hi('Conceal', 'Ignore')
     hi('NormalFloat', colors.float)
-    hi('FloatBorder', merge(colors.float, colors.border))
+    hi('FloatBorder', colors.float_border)
 end
 
 local function set_cmp(colors)
-    hi('CmpItemAbbrMatch', colors.highlight)
-    hi('CmpItemAbbrMatchFuzzy', colors.highlight)
+    hi('CmpItemAbbr', colors.transparent_float)
+    hi('CmpItemMenu', 'Pmenu')
+    hi('CmpItemKind', 'PmenuKind')
+    hi('CmpItemAbbrMatch', 'PmenuSel')
+    hi('CmpItemAbbrMatchFuzzy', 'PmenuSel')
+
+    -- TODO: merge met Pmenu ipv Normal
     hi('CmpItemAbbrDeprecated', merge(colors.normal, { strikethrough = true }))
-    hi('CmpItemKind', colors.highlight)
 end
 
 local function set_dap_ui()
@@ -288,7 +292,7 @@ local function set_gui(colors)
     -- cursor
     hi('ColorColumn', colors.visual_badge)
     hi('CursorColumn', colors.visual_badge)
-    hi('CursorLine', 'CursorColumn')
+    hi('CursorLine', colors.highlight)
     hi('Cursor', invert(colors.normal))
     hi('CursorIM', 'Cursor')
     hi('lCursor', 'Cursor')
@@ -300,10 +304,12 @@ local function set_gui(colors)
     hi('VisualNOS', 'Visual')
 
     -- Pmenu
-    hi('Pmenu', { fg = colors.ui_text, bg = colors.ui_background })
-    hi('PmenuSel', { fg = colors.ui_text, bg = colors.ui_widget })
-    hi('PmenuSbar', { bg = colors.ui_widget })
-    hi('PmenuThumb', { bg = colors.ui_widget })
+    hi('Pmenu', colors.float)
+    hi('PmenuKind', colors.directory)
+    hi('PmenuExtra', 'PmenuKind')
+    hi('PmenuSel', colors.highlight)
+    hi('PmenuSbar', 'Pmenu')
+    hi('PmenuThumb', invert(colors.float_border))
 
     -- folds
     hi('FoldColumn', colors.lens)

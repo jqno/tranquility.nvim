@@ -75,7 +75,7 @@ local themes = {
         comment = { fg = s.green },
         link = { fg = s.blue },
         conceal = { fg = s.dim_0 },
-        raw_badge = { fg = s.fg_1, bg = s.bg_2 },
+        raw_badge = { fg = s.fg_1, bg = s.bg_1 },
         lens = { fg = s.blue, bg = s.bg_blue },
         visual = { fg = s.blue },
         visual_badge = { bg = s.bg_blue }, -- Note: no fg
@@ -90,8 +90,10 @@ local themes = {
         ui_widget = s.green,
         ui_highlight = s.violet,
         ui_extra_highlight = s.cyan,
-        border = { fg = s.green },
-        float = { bg = s.bg_1 },
+        border = { fg = s.green, bg = s.none },
+        transparent_float = { fg = s.fg_1 },
+        float = { fg = s.fg_1, bg = s.bg_1 },
+        float_border = { fg = s.green, bg = s.bg_1 },
         directory = { fg = s.violet },
 
         -- Status elements
@@ -132,7 +134,7 @@ local themes = {
         comment = { fg = n.aurora_3 },
         link = { fg = n.frost_1 },
         conceal = { fg = n.polar_night_3 },
-        raw_badge = { fg = s.snow_storm_2, bg = s.polar_night_3 },
+        raw_badge = { fg = s.snow_storm_2, bg = s.polar_night_1 },
         lens = { fg = n.frost_1, bg = n.bg_frost_1 },
         visual = { fg = n.frost_1 },
         visual_badge = { bg = n.bg_frost_1 }, -- Note: no fg
@@ -147,8 +149,10 @@ local themes = {
         ui_widget = n.aurora_3,
         ui_highlight = n.aurora_4,
         ui_extra_highlight = n.frost_2,
-        border = { fg = n.aurora_3 },
-        float = { bg = n.polar_night_1 },
+        border = { fg = n.aurora_3, bg = n.polar_night_0 },
+        transparent_float = { fg = s.snow_storm_2 },
+        float = { fg = s.snow_storm_2, bg = n.polar_night_1 },
+        float_border = { fg = n.aurora_3, bg = n.polar_night_1 },
         directory = { fg = n.aurora_4 },
 
         -- Status elements
