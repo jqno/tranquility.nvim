@@ -189,6 +189,8 @@ local function set_lsp(colors)
     hi('@lsp.typemod.keyword.documentation', '@keyword')
     hi('@lsp.typemod.parameter.documentation', 'Normal')
 
+    hi('@lsp.mod.declaration', colors.declaration)
+
     hi('LspCodeLens', colors.lens)
     hi('LspCodeLensSeparator', colors.lens)
     hi('LspReferenceText', colors.highlight)

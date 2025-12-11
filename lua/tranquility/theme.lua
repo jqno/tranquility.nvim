@@ -74,6 +74,8 @@ local themes = {
         operator = { fg = s.orange },
         comment = { fg = s.green },
         link = { fg = s.blue },
+        mutability = { underline = true, special = s.magenta },
+        declaration = { bold = true },
         conceal = { fg = s.dim_0 },
         raw_badge = { fg = s.fg_1, bg = s.bg_1 },
         lens = { fg = s.blue, bg = s.bg_blue },
@@ -112,8 +114,7 @@ local themes = {
 
         highlight_color = s.cyan,
         highlight = { fg = s.cyan, bg = s.bg_cyan },
-        highlight_plus = { fg = s.bg_2, bg = s.cyan },
-        mutability = { underline = true, special = s.cyan }
+        highlight_plus = { fg = s.bg_2, bg = s.cyan }
     },
     nord = {
         name = 'Tranquil Nord',
@@ -127,6 +128,8 @@ local themes = {
         operator = { fg = n.frost_0 },
         comment = { fg = n.aurora_3 },
         link = { fg = n.frost_1 },
+        mutability = { underline = true, special = n.aurora_4 },
+        declaration = { bold = true },
         conceal = { fg = n.polar_night_3 },
         raw_badge = { fg = s.snow_storm_2, bg = s.polar_night_1 },
         lens = { fg = n.frost_1, bg = n.bg_frost_1 },
@@ -165,8 +168,7 @@ local themes = {
 
         highlight_color = n.frost_2,
         highlight = { fg = n.bg_frost_2, bg = n.frost_2 },
-        highlight_plus = { fg = n.snow_storm_2, bg = n.frost_2 },
-        mutability = { underline = true, special = s.frost_2 }
+        highlight_plus = { fg = n.snow_storm_2, bg = n.frost_2 }
     }
 }
 
