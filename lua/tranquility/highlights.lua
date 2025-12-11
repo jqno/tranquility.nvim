@@ -1,5 +1,4 @@
 local util = require('tranquility.util')
-local none = util.none
 local hi = util.hi
 local merge = util.merge
 local invert = util.invert

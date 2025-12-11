@@ -81,15 +81,6 @@ local themes = {
         visual_badge = { bg = s.bg_blue }, -- Note: no fg
 
         -- UI elements
-        background = util.none, -- Transparent background
-        ui_dim_background = s.bg_1,
-        ui_background = s.bg_2,
-        cursor = s.fg_1,
-        ui_text = s.fg_1,
-        ui_dim_text = s.dim_0,
-        ui_widget = s.green,
-        ui_highlight = s.violet,
-        ui_extra_highlight = s.cyan,
         border = { fg = s.green, bg = s.none },
         transparent_float = { fg = s.fg_1 },
         float = { fg = s.fg_1, bg = s.bg_1 },
@@ -143,15 +134,6 @@ local themes = {
         visual_badge = { bg = n.bg_frost_1 }, -- Note: no fg
 
         -- UI elements
-        background = n.polar_night_0,
-        ui_dim_background = n.polar_night_1,
-        ui_background = n.polar_night_2,
-        cursor = n.snow_storm_2,
-        ui_text = n.snow_storm_2,
-        ui_dim_text = n.polar_night_3,
-        ui_widget = n.aurora_3,
-        ui_highlight = n.aurora_4,
-        ui_extra_highlight = n.frost_2,
         border = { fg = n.aurora_3, bg = n.polar_night_0 },
         transparent_float = { fg = s.snow_storm_2 },
         float = { fg = s.snow_storm_2, bg = n.polar_night_1 },

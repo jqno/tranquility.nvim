@@ -12,7 +12,7 @@ local function merge(t1, t2)
 end
 
 local function invert(t)
-    local result = vim.tbl_extend("force", {}, t)
+    local result = vim.tbl_extend('force', {}, t)
     result.fg = t.bg
     result.bg = t.fg
     return result
