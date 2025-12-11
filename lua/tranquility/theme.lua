@@ -97,6 +97,7 @@ local themes = {
         directory = { fg = s.violet },
         statusline = { fg = s.fg_1, bg = s.bg_2 },
         statusline_nc = { fg = s.dim_0, bg = s.bg_1 },
+        lualine = { fg = s.bg_1 },
 
         -- Status elements
         ok = { fg = s.green },
@@ -158,6 +159,7 @@ local themes = {
         directory = { fg = n.aurora_4 },
         statusline = { fg = s.snow_storm_2, bg = s.polar_night_3 },
         statusline_nc = { fg = n.frost_3, bg = n.polar_night_1 },
+        lualine = { fg = n.polar_night_1 },
 
         -- Status elements
         ok = { fg = n.aurora_3 },
