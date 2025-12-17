@@ -2,36 +2,37 @@ local This = {}
 
 function This.get(theme)
     local colors = require('tranquility.theme').define_colors(theme)
+    local util = require('tranquility.util')
     return {
         normal = {
-            a = { bg = colors.ui_widget, fg = colors.ui_dim_background, gui = 'bold' },
-            b = { bg = colors.identifier, fg = colors.ui_dim_background },
-            c = { bg = colors.ui_background, fg = colors.identifier },
+            a = util.merge(colors.lualine, { bg = colors.ok.fg }),
+            b = util.invert(colors.statusline),
+            c = colors.statusline,
         },
         insert = {
-            a = { bg = colors.literal, fg = colors.ui_dim_background, gui = 'bold' },
-            b = { bg = colors.identifier, fg = colors.ui_dim_background },
-            c = { bg = colors.ui_background, fg = colors.identifier },
+            a = util.merge(colors.lualine, { bg = colors.literal.fg }),
+            b = util.invert(colors.statusline),
+            c = colors.statusline,
         },
         visual = {
-            a = { bg = colors.visual, fg = colors.ui_dim_background, gui = 'bold' },
-            b = { bg = colors.identifier, fg = colors.ui_dim_background },
-            c = { bg = colors.ui_background, fg = colors.identifier },
+            a = util.merge(colors.lualine, { bg = colors.visual.fg }),
+            b = util.invert(colors.statusline),
+            c = colors.statusline,
         },
         replace = {
-            a = { bg = colors.operator, fg = colors.ui_dim_background, gui = 'bold' },
-            b = { bg = colors.identifier, fg = colors.ui_dim_background },
-            c = { bg = colors.ui_background, fg = colors.identifier },
+            a = util.merge(colors.lualine, { bg = colors.operator.fg }),
+            b = util.invert(colors.statusline),
+            c = colors.statusline,
         },
         command = {
-            a = { bg = colors.warning, fg = colors.ui_dim_background, gui = 'bold' },
-            b = { bg = colors.identifier, fg = colors.ui_dim_background },
-            c = { bg = colors.ui_background, fg = colors.identifier },
+            a = util.merge(colors.lualine, { bg = colors.warning.fg }),
+            b = util.invert(colors.statusline),
+            c = colors.statusline,
         },
         inactive = {
-            a = { bg = colors.identifier, fg = colors.ui_dim_background, gui = 'bold' },
-            b = { bg = colors.identifier, fg = colors.ui_dim_background },
-            c = { bg = colors.ui_background, fg = colors.identifier },
+            a = util.merge(colors.lualine, { bg = colors.normal.fg }),
+            b = util.invert(colors.statusline),
+            c = colors.statusline,
         }
     }
 end

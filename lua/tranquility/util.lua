@@ -7,4 +7,15 @@ local function hi(group, param)
     vim.api.nvim_set_hl(0, group, param)
 end
 
-return { none = 'NONE', hi = hi }
+local function merge(t1, t2)
+    return vim.tbl_extend('error', t1, t2)
+end
+
+local function invert(t)
+    local result = vim.tbl_extend('force', {}, t)
+    result.fg = t.bg
+    result.bg = t.fg
+    return result
+end
+
+return { none = 'NONE', hi = hi, merge = merge, invert = invert }

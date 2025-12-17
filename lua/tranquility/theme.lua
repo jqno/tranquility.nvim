@@ -1,273 +1,179 @@
 local util = require('tranquility.util')
 
+local palettes = {
+    selenized = {
+        bg_0       = '#181818',
+        bg_1       = '#252525',
+        bg_2       = '#3b3b3b',
+        dim_0      = '#777777',
+        fg_0       = '#b9b9b9',
+        fg_1       = '#dedede',
+
+        red        = '#ff5e56',
+        green      = '#83c746',
+        yellow     = '#efc541',
+        blue       = '#4f9cfe',
+        magenta    = '#ff81ca',
+        cyan       = '#56d8c9',
+        orange     = '#fa9153',
+        violet     = '#b891f5',
+
+        bg_red     = '#5d2d2b',
+        bg_green   = '#384d26',
+        bg_yellow  = '#584c24',
+        bg_blue    = '#28405d',
+        bg_magenta = '#5d384d',
+        bg_cyan    = '#2b524d',
+        bg_orange  = '#5c3c2a',
+        bg_violet  = '#483c5a'
+    },
+    nord = {
+        polar_night_0 = '#2e3440',
+        polar_night_1 = '#3b4252',
+        polar_night_2 = '#434c5e',
+        polar_night_3 = '#4c566a',
+        snow_storm_0 = '#d8dee9',
+        snow_storm_1 = '#e5e9f0',
+        snow_storm_2 = '#eceff4',
+
+        frost_0 = '#8fbcbb',
+        frost_1 = '#88c0d0',
+        frost_2 = '#81a1c1',
+        frost_3 = '#5e81ac',
+        bg_frost_0 = '#3c4949',
+        bg_frost_1 = '#3a4a4f',
+        bg_frost_2 = '#38414b',
+        bg_frost_3 = '#2d3844',
+
+        aurora_0 = '#bf616a',
+        aurora_1 = '#d08770',
+        aurora_2 = '#ebcb8b',
+        aurora_3 = '#a3be8c',
+        aurora_4 = '#b48ead',
+        bg_aurora_0 = '#4a2e31',
+        bg_aurora_1 = '#4f3932',
+        bg_aurora_2 = '#574e3a',
+        bg_aurora_3 = '#424a3b',
+        bg_aurora_4 = '#473b45'
+    }
+}
+
+local s = palettes.selenized
+local n = palettes.nord
+
 local themes = {
     selenized = {
         name = 'Tranquility',
-        transparent_background = true,
-        palette = {
-            bg_0 = '#181818',
-            bg_1 = '#252525',
-            bg_2 = '#3b3b3b',
-            red = '#ed4a46',
-            bright_red = '#ff5e56',
-            green = '#70b433',
-            bright_green = '#83c746',
-            yellow = '#dbb32d',
-            bright_yellow = '#efc541',
-            blue = '#368aeb',
-            bright_blue = '#4f9cfe',
-            magenta = '#eb6eb7',
-            bright_magenta = '#ff81ca',
-            cyan = '#3fc5b7',
-            bright_cyan = '#56d8c9',
-            orange = '#e67f43',
-            bright_orange = '#fa9153',
-            violet = '#a580e2',
-            bright_violet = '#b891f5',
-            dim_0 = '#777777',
-            fg_0 = '#b9b9b9',
-            fg_1 = '#dedede'
-        },
-        mappings = {
-            -- Syntax elements
-            identifier = 'fg_1',
-            statement = 'dim_0',
-            literal = 'bright_yellow',
-            type = 'fg_0',
-            operator = 'orange',
-            comment = 'bright_green',
-            link = 'bright_blue',
-            conceal = 'blue',
-            highlighted_background = 'bg_2',
 
-            -- UI elements
-            background = 'bg_0',
-            ui_dim_background = 'bg_1',
-            ui_background = 'bg_2',
-            visual = 'dim_0',
-            cursor = 'fg_1',
-            lens = 'bright_blue',
-            ui_text = 'fg_1',
-            ui_dim_text = 'dim_0',
-            ui_widget = 'green',
-            ui_highlight = 'violet',
-            ui_extra_highlight = 'cyan',
+        -- Syntax elements
+        normal = { fg = s.fg_1, bg = util.none },
+        statement = { fg = s.dim_0, bold = true },
+        literal = { fg = s.yellow },
+        literal_badge = { fg = s.yellow, bg = s.bg_yellow },
+        type = { fg = s.fg_0 },
+        operator = { fg = s.orange },
+        comment = { fg = s.green },
+        link = { fg = s.blue },
+        mutability = { underline = true, special = s.magenta },
+        declaration = { bold = true },
+        conceal = { fg = s.dim_0 },
+        raw_badge = { fg = s.fg_1, bg = s.bg_1 },
+        lens = { fg = s.blue, bg = s.bg_blue },
+        visual = { fg = s.blue },
+        visual_badge = { bg = s.bg_blue }, -- Note: no fg
 
-            -- Status elements
-            error = 'bright_red',
-            warning = 'bright_magenta',
-            info = 'bright_cyan',
-            hint = 'fg_1',
-            added = 'bright_green',
-            changed = 'bright_yellow',
-            deleted = 'bright_red'
-        }
+        -- UI elements
+        border = { fg = s.green, bg = s.none },
+        transparent_float = { fg = s.fg_1 },
+        float = { fg = s.fg_1, bg = s.bg_1 },
+        float_border = { fg = s.green, bg = s.bg_1 },
+        directory = { fg = s.violet },
+        statusline = { fg = s.fg_1, bg = s.bg_2 },
+        statusline_nc = { fg = s.dim_0, bg = s.bg_1 },
+        lualine = { fg = s.bg_1 },
+
+        -- Status elements
+        ok = { fg = s.green },
+        ok_badge = { fg = s.green, bg = s.bg_green },
+        error = { fg = s.red },
+        error_badge = { fg = s.red, bg = s.bg_red },
+        warning = { fg = s.magenta },
+        warning_badge = { fg = s.magenta, bg = s.bg_magenta },
+        unnecessary_badge = { fg = s.dim_0, bg = s.bg_2 },
+
+        info = { fg = s.cyan },
+        info_badge = { fg = s.cyan, bg = s.bg_cyan },
+        hint = { fg = s.fg_1 },
+        hint_badge = { bg = s.bg_2 }, -- Note: no fg
+        added = { fg = s.green },
+        added_badge = { fg = s.green, bg = s.bg_green },
+        changed = { fg = s.yellow },
+        changed_badge = { fg = s.yellow, bg = s.bg_yellow },
+        deleted = { fg = s.red },
+        deleted_badge = { fg = s.red, bg = s.bg_red },
+
+        highlight_color = s.cyan,
+        highlight = { fg = s.cyan, bg = s.bg_cyan },
+        highlight_plus = { fg = s.bg_2, bg = s.cyan }
     },
     nord = {
         name = 'Tranquil Nord',
-        transparent_background = true,
-        palette = {
-            polar_night_0 = '#2e3440',
-            polar_night_1 = '#3b4252',
-            polar_night_2 = '#434c5e',
-            polar_night_3 = '#4c566a',
-            snow_storm_0 = '#d8dee9',
-            snow_storm_1 = '#e5e9f0',
-            snow_storm_2 = '#eceff4',
-            frost_0 = '#8fbcbb',
-            frost_1 = '#88c0d0',
-            frost_2 = '#81a1c1',
-            frost_3 = '#5e81ac',
-            aurora_0 = '#bf616a',
-            aurora_1 = '#d08770',
-            aurora_2 = '#ebcb8b',
-            aurora_3 = '#a3be8c',
-            aurora_4 = '#b48ead'
-        },
-        mappings = {
-            -- Syntax elements
-            identifier = 'snow_storm_2',
-            statement = 'frost_1',
-            literal = 'aurora_2',
-            type = 'snow_storm_0',
-            operator = 'frost_0',
-            comment = 'aurora_3',
-            link = 'frost_0',
-            conceal = 'polar_night_3',
-            highlighted_background = 'polar_night_2',
 
-            -- UI elements
-            background = 'polar_night_0',
-            ui_dim_background = 'polar_night_1',
-            ui_background = 'polar_night_2',
-            visual = 'polar_night_2',
-            cursor = 'snow_storm_2',
-            lens = 'aurora_1',
-            ui_text = 'snow_storm_2',
-            ui_dim_text = 'polar_night_3',
-            ui_widget = 'aurora_3',
-            ui_highlight = 'aurora_4',
-            ui_extra_highlight = 'frost_1',
+        -- Syntax elements
+        normal = { fg = n.snow_storm_2, bg = n.polar_night_0 },
+        statement = { fg = n.frost_3 },
+        literal = { fg = n.aurora_2 },
+        literal_badge = { fg = n.aurora_2, bg = n.bg_aurora_2 },
+        type = { fg = n.snow_storm_0 },
+        operator = { fg = n.frost_0 },
+        comment = { fg = n.aurora_3 },
+        link = { fg = n.frost_1 },
+        mutability = { underline = true, special = n.aurora_4 },
+        declaration = { bold = true },
+        conceal = { fg = n.polar_night_3 },
+        raw_badge = { fg = s.snow_storm_2, bg = s.polar_night_1 },
+        lens = { fg = n.frost_1, bg = n.bg_frost_1 },
+        visual = { fg = n.frost_1 },
+        visual_badge = { bg = n.bg_frost_1 }, -- Note: no fg
 
-            -- Status elements
-            error = 'aurora_0',
-            warning = 'aurora_4',
-            info = 'frost_1',
-            hint = 'snow_storm_2',
-            added = 'aurora_3',
-            changed = 'aurora_2',
-            deleted = 'aurora_0'
-        }
-    },
-    catppuccin = {
-        name = 'Tranquil Catppuccin',
-        transparent_background = true,
-        palette = {
-            rosewater = '#f5e0dc',
-            flamingo = '#f2cdcd',
-            pink = '#f5c2e7',
-            mauve = '#cba6f7',
-            red = '#f38ba8',
-            maroon = '#eba0ac',
-            peach = '#fab387',
-            yellow = '#f9e2af',
-            green = '#a6e3a1',
-            teal = '#94e2d5',
-            sky = '#89dceb',
-            sapphire = '#74c7ec',
-            blue = '#89b4fa',
-            lavender = '#b4befe',
-            text = '#cdd6f4',
-            subtext1 = '#bac2de',
-            subtext0 = '#a6adc8',
-            overlay2 = '#9399b2',
-            overlay1 = '#7f849c',
-            overlay0 = '#6c7086',
-            surface2 = '#585b70',
-            surface1 = '#45475a',
-            surface0 = '#313244',
-            base = '#1e1e2e',
-            mantle = '#181825',
-            crust = '#11111b'
-        },
-        mappings = {
-            -- Syntax elements
-            identifier = 'text',
-            statement = 'mauve',
-            literal = 'yellow',
-            type = 'lavender',
-            operator = 'peach',
-            comment = 'green',
-            link = 'blue',
-            conceal = 'overlay1',
-            highlighted_background = 'surface2',
+        -- UI elements
+        border = { fg = n.aurora_3, bg = n.polar_night_0 },
+        transparent_float = { fg = s.snow_storm_2 },
+        float = { fg = s.snow_storm_2, bg = n.polar_night_1 },
+        float_border = { fg = n.aurora_3, bg = n.polar_night_1 },
+        directory = { fg = n.aurora_4 },
+        statusline = { fg = n.snow_storm_2, bg = n.polar_night_3 },
+        statusline_nc = { fg = n.frost_3, bg = n.polar_night_1 },
+        lualine = { fg = n.polar_night_1 },
 
-            -- UI elements
-            background = 'base',
-            ui_dim_background = 'surface0',
-            ui_background = 'surface2',
-            visual = 'surface2',
-            cursor = 'rosewater',
-            lens = 'pink',
-            ui_text = 'rosewater',
-            ui_dim_text = 'subtext0',
-            ui_widget = 'blue',
-            ui_highlight = 'sapphire',
-            ui_extra_highlight = 'teal',
+        -- Status elements
+        ok = { fg = n.aurora_3 },
+        ok_badge = { fg = n.aurora_3, bg = n.bg_aurora_3 },
+        error = { fg = n.aurora_0 },
+        error_badge = { fg = n.aurora_0, bg = n.bg_aurora_0 },
+        warning = { fg = n.aurora_4 },
+        warning_badge = { fg = n.aurora_4, bg = n.bg_aurora_4 },
+        unnecessary_badge = { fg = s.polar_night_3, bg = s.polar_night_3 },
 
-            -- Status elements
-            error = 'red',
-            warning = 'yellow',
-            info = 'teal',
-            hint = 'flamingo',
-            added = 'green',
-            changed = 'blue',
-            deleted = 'red'
-        }
-    },
-    intellij = {
-        name = 'Tranquil IntelliJ',
-        transparent_background = true,
-        palette = {
-            background = '#1e1f22',
-            bg_inline_hint = '#393b40',
-            bg_injected_lang = '#293c40',
-            text = '#bcbec4',
-            unused_symbol = '#6f737a',
-            fg_inline_hint = '#858a94',
-            keyword = '#cf8e6d',
-            string = '#6aab73',
-            metadata = '#b3ae60',
-            hyperlink = '#548af7',
-            button = '#3675f0',
-            weak_warning = '#857042',
-            typo = '#7ec482',
-            error = '#fa6675',
-            warning = '#f2c55c',
-        },
-        mappings = {
-            -- Syntax elements
-            identifier = 'text',
-            statement = 'unused_symbol',
-            literal = 'metadata',
-            type = 'text',
-            operator = 'keyword',
-            comment = 'string',
-            link = 'hyperlink',
-            conceal = 'fg_inline_hint',
-            highlighted_background = 'bg_injected_lang',
+        info = { fg = n.frost_2 },
+        info_badge = { fg = n.frost_2, bg = n.bg_frost_2 },
+        hint = { fg = n.snow_storm_2 },
+        hint_badge = { bg = n.polar_night_3 }, -- Note: no fg
+        added = { fg = n.aurora_3 },
+        added_badge = { fg = n.aurora_3, bg = n.bg_aurora_3 },
+        changed = { fg = n.aurora_2 },
+        changed_badge = { fg = n.aurora_2, bg = n.bg_aurora_2 },
+        deleted = { fg = n.aurora_0 },
+        deleted_badge = { fg = n.aurora_0, bg = n.bg_aurora_0 },
 
-            -- UI elements
-            background = 'background',
-            ui_dim_background = 'bg_inline_hint',
-            ui_background = 'bg_injected_lang',
-            visual = 'unused_symbol',
-            cursor = 'text',
-            lens = 'button',
-            ui_text = 'text',
-            ui_dim_text = 'fg_inline_hint',
-            ui_widget = 'button',
-            ui_highlight = 'weak_warning',
-            ui_extra_highlight = 'typo',
-
-            -- Status elements
-            error = 'error',
-            warning = 'warning',
-            info = 'typo',
-            hint = 'text',
-            added = 'typo',
-            changed = 'warning',
-            deleted = 'error'
-        }
+        highlight_color = n.frost_2,
+        highlight = { fg = n.bg_frost_2, bg = n.frost_2 },
+        highlight_plus = { fg = n.snow_storm_2, bg = n.frost_2 }
     }
 }
 
 local function define_colors(theme_name)
-    local theme = themes[theme_name]
-
-    local colors = {}
-    for key, _ in pairs(theme.mappings) do
-        colors[key] = theme.palette[theme.mappings[key]]
-    end
-
-    if theme.transparent_background then
-        colors.background = util.none
-    end
-
-    colors.theme_name = theme.name
-
-    return colors
+    return themes[theme_name]
 end
 
-local function random()
-    local keys = {}
-    for key in pairs(themes) do
-        table.insert(keys, key)
-    end
-
-    math.randomseed(os.time())
-    local index = math.random(#keys)
-    return keys[index]
-end
-
-return { define_colors = define_colors, random = random }
+return { define_colors = define_colors }
