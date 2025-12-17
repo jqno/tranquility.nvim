@@ -104,7 +104,7 @@ local themes = {
         info = { fg = s.cyan },
         info_badge = { fg = s.cyan, bg = s.bg_cyan },
         hint = { fg = s.fg_1 },
-        hint_badge = { fg = s.fg_1, bg = s.bg_2 },
+        hint_badge = { bg = s.bg_2 }, -- Note: no fg
         added = { fg = s.green },
         added_badge = { fg = s.green, bg = s.bg_green },
         changed = { fg = s.yellow },
@@ -158,7 +158,7 @@ local themes = {
         info = { fg = n.frost_2 },
         info_badge = { fg = n.frost_2, bg = n.bg_frost_2 },
         hint = { fg = n.snow_storm_2 },
-        hint_badge = { fg = n.snow_storm_2, bg = n.polar_night_3 },
+        hint_badge = { bg = n.polar_night_3 }, -- Note: no fg
         added = { fg = n.aurora_3 },
         added_badge = { fg = n.aurora_3, bg = n.bg_aurora_3 },
         changed = { fg = n.aurora_2 },
