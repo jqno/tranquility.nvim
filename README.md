@@ -16,12 +16,6 @@ Tranquility: based on [Selenized Dark palette](https://github.com/jan-warchol/se
 ![tranquil-nord](doc/tranquil-nord.webp)
 Tranquil Nord: based on [Nord palette](https://www.nordtheme.com/)
 
-![tranquil-catppuccin](doc/tranquil-catppuccin.webp)
-Tranquil Catppuccin: based on [Catppuccin Mocha palette](https://github.com/catppuccin/catppuccin)
-
-![tranquil-intellij](doc/tranquil-intellij.webp)
-Tranquil IntelliJ: based on [IntelliJ palette](https://www.jetbrains.com/idea/)
-
 ## Configuration
 
 Install the plugin with your favorite plugin manager, for instance with Lazy:
@@ -35,11 +29,6 @@ return {
 
         -- Or pick another scheme:
         -- vim.cmd.colorscheme('tranquil-nord')
-        -- vim.cmd.colorscheme('tranquil-catppuccin')
-        -- vim.cmd.colorscheme('tranquil-intellij')
-
-        -- Or let Neovim pick one at random:
-        -- vim.cmd.colorscheme('tranquil-random')
     end
 }
 ```
