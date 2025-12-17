@@ -142,7 +142,7 @@ local themes = {
         float = { fg = s.snow_storm_2, bg = n.polar_night_1 },
         float_border = { fg = n.aurora_3, bg = n.polar_night_1 },
         directory = { fg = n.aurora_4 },
-        statusline = { fg = s.snow_storm_2, bg = s.polar_night_3 },
+        statusline = { fg = n.snow_storm_2, bg = n.polar_night_3 },
         statusline_nc = { fg = n.frost_3, bg = n.polar_night_1 },
         lualine = { fg = n.polar_night_1 },
 
