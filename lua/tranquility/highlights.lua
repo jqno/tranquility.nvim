@@ -246,6 +246,7 @@ end
 
 local function set_filetype_scala()
     hi('@character.special.scala', 'Normal')
+    hi('@lsp.type.regexp.scala', 'Escape')
 end
 
 local function set_filetype_lua()
