@@ -112,9 +112,9 @@ local themes = {
         deleted = { fg = s.red },
         deleted_badge = { fg = s.red, bg = s.bg_red },
 
-        highlight_color = s.cyan,
-        highlight = { fg = s.cyan, bg = s.bg_cyan },
-        highlight_plus = { fg = s.bg_2, bg = s.cyan }
+        highlight_color = s.orange,
+        highlight = { fg = s.orange, bg = s.bg_orange },
+        highlight_plus = { fg = s.bg_2, bg = s.orange }
     },
     nord = {
         name = 'Tranquil Nord',
@@ -166,9 +166,9 @@ local themes = {
         deleted = { fg = n.aurora_0 },
         deleted_badge = { fg = n.aurora_0, bg = n.bg_aurora_0 },
 
-        highlight_color = n.frost_2,
-        highlight = { fg = n.bg_frost_2, bg = n.frost_2 },
-        highlight_plus = { fg = n.snow_storm_2, bg = n.frost_2 }
+        highlight_color = n.aurora_1,
+        highlight = { fg = n.aurora_1, bg = n.bg_aurora_1 },
+        highlight_plus = { fg = n.polar_night_3, bg = n.aurora_1 }
     }
 }
 
