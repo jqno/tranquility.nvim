@@ -226,6 +226,18 @@ local function set_lsp(colors)
     hi('@lsp.type.comment', {})
 end
 
+local function set_filetype_csv(colors)
+    hi('csvCol0', colors.normal)
+    hi('csvCol1', colors.ok)
+    hi('csvCol2', colors.info)
+    hi('csvCol3', colors.link)
+    hi('csvCol4', colors.directory)
+    hi('csvCol5', colors.warning)
+    hi('csvCol6', colors.error)
+    hi('csvCol7', colors.operator)
+    hi('csvCol8', colors.changed)
+end
+
 local function set_filetype_gitcommit()
     hi('gitcommitSummary', 'Constant')
     hi('gitcommitOverflow', 'Error')
@@ -390,6 +402,7 @@ local function set_highlights(colors)
     set_treesitter(colors)
     set_lsp(colors)
 
+    set_filetype_csv(colors)
     set_filetype_gitcommit()
     set_filetype_html()
     set_filetype_java()
