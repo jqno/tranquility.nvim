@@ -89,6 +89,7 @@ end
 local function set_nvimtree()
     hi('NvimTreeRootFolder', 'Comment')
     hi('NvimTreeExecFile', 'Escape')
+    hi('NvimTreeImageFile', 'Operator')
 end
 
 local function set_treesitter(colors)
