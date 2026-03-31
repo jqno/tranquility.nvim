@@ -27,7 +27,7 @@ local function set_native_syntax(colors)
     hi('Float', 'Constant')
     hi('Function', 'Normal')
     hi('Identifier', 'Normal')
-    hi('Include', 'Delimiter')
+    hi('Include', 'Statement')
     hi('Keyword', 'Statement')
     hi('Label', 'Statement')
     hi('Macro', 'Define')
@@ -260,6 +260,8 @@ end
 local function set_filetype_scala()
     hi('@character.special.scala', 'Normal')
     hi('@lsp.type.regexp.scala', 'Escape')
+    hi('scalaCapitalWord', 'Type')
+    hi('scalaInstanceDeclaration', 'Type')
 end
 
 local function set_filetype_lua()
