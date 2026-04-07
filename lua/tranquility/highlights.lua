@@ -266,6 +266,10 @@ local function set_filetype_scala()
     hi('scalaKeywordModifier', 'Keyword')
 end
 
+local function set_filetype_kotlin()
+    hi('ktStructure', 'Keyword')
+end
+
 local function set_filetype_lua()
     hi('luaFunction', 'Keyword')
     hi('luaFunctionBlock', 'Function')
@@ -412,6 +416,7 @@ local function set_highlights(colors)
     set_filetype_html()
     set_filetype_java()
     set_filetype_scala()
+    set_filetype_kotlin()
     set_filetype_lua()
     set_filetype_markdown(colors)
     set_filetype_xml()
