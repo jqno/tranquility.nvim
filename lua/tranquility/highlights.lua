@@ -256,6 +256,11 @@ local function set_filetype_java()
     hi('@function.builtin.java', '@keyword')
     hi('@type.builtin.java', '@keyword')
     hi('javaAnnotation', 'Type')
+    hi('javaDocAuthorTag', 'Keyword')
+    hi('javaDocParamTag', 'Keyword')
+    hi('javaDocReturnTag', 'Keyword')
+    hi('javaDocSinceTag', 'Keyword')
+    hi('javaDocThrowsTag', 'Keyword')
 end
 
 local function set_filetype_scala()
